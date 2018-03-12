@@ -5,14 +5,13 @@ const initialState = {
 
    
     isLoading: true,
-    businesses:[],
+   
     totalNumber:'90',
     
     currentCategory:'All',
     filterPrice:'All',
     filterShipping:'All',
-    sortValue:1,
-    searchTerm:'',
+   
     registerForm:false,
     login:{loginStatus:false,
         loginInfo:{

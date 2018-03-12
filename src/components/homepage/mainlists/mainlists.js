@@ -6,7 +6,7 @@ import { ShopByCategory } from './shopbycategory/shopbycategory';
 import { SingleProductUnderList } from '../../productslistpage/selectproductslist/selectproductlistui/singleproduct';
 import { NavLink, Route } from 'react-router-dom';
 import { Loading } from '../../animation/loading';
-import { SingleEventUi } from '../../events/eventslist/singleeventui'
+import { SingleEventUi } from '../../eventspage/eventslist/singleeventui'
 
 export class MainLists extends React.Component {
   render() {
