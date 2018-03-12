@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { CheckOutFinish } from './checkoutfinish';
+import { CheckOutFinish } from '../../components/checkoutfinishpage/checkoutfinish';
 
 
 const mapStateToProps = (state) =>{

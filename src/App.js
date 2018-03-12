@@ -4,7 +4,7 @@ import './App.css';
 import { ErrorBoundary } from './errorcatch/errorboundary';
 import { Loading } from './components/animation/loading';
 import { HeaderContainer } from './containers/headercontainer/headercontainer'
-import { CategoryBarContainer } from './containers/categorybarcontainer'
+import { CategoryBarContainer } from './containers/categorybarcontainer/categorybarcontainer'
 
 import { ProductsListPage } from './components/productslistpage/finalui/productslistpage';
 
@@ -16,14 +16,14 @@ import { PersonalCenterContainer } from './containers/signup&signincontainer/per
 import { LoginPageContainer } from './containers/signup&signincontainer/loginpagecontainer';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Footer } from './components/footer/footer';
-import { HomePageContainer } from './containers/homepagecontainer';
+import { HomePageContainer } from './containers/homepagecontainer/homepagecontainer';
 import Client, {Config} from 'shopify-buy';
 import { ProductDetails } from './components/productdetailspage/final/final-ui';
-import { CartFinalUiContainer } from './components/cart/cartfinalui/cartfinaluicontainer';
+import { CartFinalUiContainer } from './containers/cartcontainer/cartfinaluicontainer';
 
-import { CheckOutFinishContainer } from './components/checkoutfinishpage/checkoutfinishcontainer';
-import { EventsListContainer } from './components/events/eventslist/eventslistcontainer';
-import {  EventsDetailsUi } from './components/events/eventsdetails/eventsdetailsui';
+import { CheckOutFinishContainer } from './containers/checkoutfinishipagecontainer/checkoutfinishcontainer';
+import { EventsListContainer } from './containers/eventspagecontainer/eventslistcontainer';
+import {  EventsDetailsUi } from './components/eventspage/eventsdetails/eventsdetailsui';
 import { TermOfUse } from './components/footer/termofuse/termofuse';
 import { Privacy } from './components/footer/privacy/privacy'
 

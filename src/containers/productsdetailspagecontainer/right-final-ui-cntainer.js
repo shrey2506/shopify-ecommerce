@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { ProductDetailsRightUi } from './right-final-ui';
+import { ProductDetailsRightUi } from '../../components/productdetailspage/rightpart/right-final-ui/right-final-ui';
 
 
 const mapStateToProps=(state)=>{

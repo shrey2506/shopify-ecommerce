@@ -1,4 +1,4 @@
-import { CartItemsList } from './cartitemslist';
+import { CartItemsList } from '../../components/cart/cartitemlist/cartitemslist';
 import { connect } from 'react-redux'
 
 

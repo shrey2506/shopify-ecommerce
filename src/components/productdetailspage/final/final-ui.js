@@ -2,7 +2,7 @@ import React from 'react';
 import './final-ui.css';
 import { Loading } from '../../animation/loading';
 import { ProductDetailsLeftUi } from '../leftpart/left-final-ui/left-final-ui';
-import {  ProductDetailsRightUiContainer } from '../rightpart/right-final-ui/right-final-ui-cntainer'
+import {  ProductDetailsRightUiContainer } from '../../../containers/productsdetailspagecontainer/right-final-ui-cntainer'
 
 export const ProductDetails = (props) =>{
 

@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { MainLists } from '../components/homepage/mainlists/mainlists';
+import { MainLists } from '../../components/homepage/mainlists/mainlists';
 
 const mapStateToProps = (state) =>{
     return {

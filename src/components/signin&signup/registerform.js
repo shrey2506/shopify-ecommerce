@@ -2,7 +2,7 @@ import React from 'react';
 import './registerform.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import { PageOne } from './pageone';
+import { RegisterFormUi } from './registerformui';
 
 import history from '../../components/productslistpage/userfilter/history'
 
@@ -192,7 +192,7 @@ export class RegisterForm extends React.Component {
 
                 <div className={this.state.pageIndex == 1 ? 'active' : 'inactive'}>
 
-                    <PageOne
+                    <RegisterFormUi
                         handleEmailBlur={this.handleEmailBlur.bind(this)}
                         emailErrorText={this.state.email.errorText}
 

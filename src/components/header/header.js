@@ -4,7 +4,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import { orange500, blue500 } from 'material-ui/styles/colors';
 import { RegisterBar } from '../signin&signup/registerbar';
-import { RegisterBarContainer } from '../../containers/registerform/registerbarcontainer';
+import { RegisterBarContainer } from '../../containers/signup&signincontainer/registerbarcontainer';
 import history from '../../components/productslistpage/userfilter/history';
 
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { CategoryBar } from '../components/categorybar/categorybar';
+import { CategoryBar } from '../../components/categorybar/categorybar';
 
 
 

@@ -1,4 +1,4 @@
-import { CartFinalUi } from './cartfinalui';
+import { CartFinalUi } from '../../components/cart/cartfinalui/cartfinalui';
 import { connect } from 'react-redux'
 
 

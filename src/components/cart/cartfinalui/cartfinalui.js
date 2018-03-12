@@ -1,9 +1,9 @@
 import React from 'react';
 import { Loading } from '../../animation/loading';
-import { CartHeader } from '../header/cart-header';
+import { CartHeader } from '../cartheader/cart-header';
 import './cartfinalui.css';
-import { CartItemsListContainer } from '../cartitemlist/cartitemslistcontainer';
-import { CartCheckOutUiContainer } from '../cartcheckout/carcheckoutcontainer';
+import { CartItemsListContainer } from '../../../containers/cartcontainer/cartitemslistcontainer';
+import { CartCheckOutUiContainer } from '../../../containers/cartcontainer/carcheckoutcontainer';
 import { CartCheckOutUi } from '../cartcheckout/cartcheckout';
 import Client, { Config } from 'shopify-buy';
 import './cartfinalui.css';

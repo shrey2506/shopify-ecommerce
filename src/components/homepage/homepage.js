@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageShow } from './imageshow/imageshow';
-import { MainListsContainer } from '../../containers/mainlistscontainer';
+import { MainListsContainer } from '../../containers/homepagecontainer/mainlistscontainer';
 import { Loading } from '../animation/loading';
 import './homepage.css'
 

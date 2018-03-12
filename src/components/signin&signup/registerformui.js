@@ -1,9 +1,9 @@
 import React from 'react';
-import './pageone.css';
+import './registerformui.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 
-export const PageOne = (props)=>{
+export const RegisterFormUi = (props)=>{
 
 return (
     <div className="pageone-container">

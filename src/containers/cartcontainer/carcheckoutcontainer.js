@@ -1,4 +1,4 @@
-import { CartCheckOutUi } from './cartcheckout';
+import { CartCheckOutUi } from '../../components/cart/cartcheckout/cartcheckout';
 import { connect } from 'react-redux'
 
 
