@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { CurrentCategory } from '../../components/page-products/currentcategory/currentcategory';
+import { CurrentCategory } from '../../components/productslistpage/currentcategory/currentcategory';
 
 
 const mapStateToProps=(state)=>({

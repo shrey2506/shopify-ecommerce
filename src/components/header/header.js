@@ -5,7 +5,7 @@ import TextField from 'material-ui/TextField';
 import { orange500, blue500 } from 'material-ui/styles/colors';
 import { RegisterBar } from '../signin&signup/registerbar';
 import { RegisterBarContainer } from '../../containers/registerform/registerbarcontainer';
-import history from '../../components/page-products/userfilter/history';
+import history from '../../components/productslistpage/userfilter/history';
 
 
 export class HeaderSearch extends React.Component {

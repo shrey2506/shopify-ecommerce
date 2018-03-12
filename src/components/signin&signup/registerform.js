@@ -5,7 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { PageOne } from './pageone';
 import { PageTwo } from './pagetwo';
 import { PageThree } from './pagethree';
-import history from '../page-products/userfilter/history'
+import history from '../../components/global components/history'
 
 
 export class RegisterForm extends React.Component {

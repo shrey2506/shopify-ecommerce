@@ -7,8 +7,8 @@ import { Loading } from './components/animation/loading';
 import { Header } from './components/header/header';
 import { HeaderContainer } from './containers/header/headercontainer'
 import { CategoryBarContainer } from './containers/categorybarcontainer'
-import { ImageShow } from './components/imageshow/imageshow';
-import { PageProducts } from './components/page-products/finalui/pageproducts';
+
+import { PageProducts } from './components/productslistpage/finalui/pageproducts';
 import { RegisterForm } from './components/signin&signup/registerform';
 import { RegisterFormContainer } from './containers/registerform/registerformcontainer';
 import { RegisterBar } from './components/signin&signup/registerbar';
@@ -85,10 +85,6 @@ componentWillMount() {
       
       <div className="App">
 
-
-
-
-       
 
         <HeaderContainer />
         <CategoryBarContainer />

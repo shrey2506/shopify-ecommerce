@@ -34,7 +34,7 @@
 
 .imageshow-left::after {
     content:'';
-    background-image: url('../../images/b4.jpeg');
+    background-image: url('../../../images/b4.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

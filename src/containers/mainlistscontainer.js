@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { BusinessList } from '../components/businesslist/businesslist';
+import { MainLists } from '../components/homepage/mainlists/mainlists';
 
 const mapStateToProps = (state) =>{
     return {
@@ -10,4 +10,4 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export const BusinessListContainer = connect (mapStateToProps,null)(BusinessList)
+export const MainListsContainer = connect (mapStateToProps,null)(MainLists)

@@ -4,7 +4,6 @@ import { UserFilterContainer } from '../../../containers/pageproducts/userfilter
 import { UserSortContainer } from '../../../containers/pageproducts/usersortcontainer';
 import { SelectProductsListContainer } from '../../../containers/pageproducts/selectproductslistcontainer';
 import './pageproducts.css';
-import { ProductFinalInfoContainer } from '../../../containers/pageproducts/product--final--info--container';
 
 import { Switch, Route, Router, Link } from 'react-router-dom';
 import history from '../userfilter/history';

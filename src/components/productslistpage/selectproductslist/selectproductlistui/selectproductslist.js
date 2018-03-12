@@ -1,10 +1,10 @@
 import React from 'react';
-import { PopularProduct } from '../../../business/popularproducts/popularproducts';
+
 import './selectproductslist.css';
 import { Loading } from '../../../animation/loading';
 import { Switch, Route } from 'react-router-dom';
-import {  ProductMoreInfo } from '../../../business/popularproducts/productmoreinfo';
-import { SingleProductUnderList } from '../../Single-Product-Ui-List/singleproduct'
+
+import { SingleProductUnderList } from './singleproduct'
 
 
 
@@ -170,26 +170,13 @@ if (!props.productsList[0]) {
 }
 
 
-
-
  return (
 
         <div className="selectproductslist">
        
       
-
-      
-      
       {afterSortList().map((product)=>
 <SingleProductUnderList product={product} key={product.id}/>)}
-
-        
-
-
-        
-       
-
-
 
         </div>
     )

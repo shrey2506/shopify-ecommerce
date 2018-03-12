@@ -1,6 +1,6 @@
 import React from 'react';
-import { ImageShow } from '../imageshow/imageshow';
-import { BusinessListContainer } from '../../containers/businesslistcontainer';
+import { ImageShow } from './imageshow/imageshow';
+import { MainListsContainer } from '../../containers/mainlistscontainer';
 import { Loading } from '../animation/loading';
 import './homepage.css'
 
@@ -10,7 +10,7 @@ export const HomePage =(props)=>{
     return (
         <div className="homepage-container">
         <ImageShow />
-        {props.productsList[0]?<BusinessListContainer />:<Loading />}
+        {props.productsList[0]?<MainListsContainer />:<Loading />}
         </div>
     )
 

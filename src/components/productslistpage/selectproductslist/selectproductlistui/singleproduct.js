@@ -1,6 +1,6 @@
 import React from 'react';
 import './singleproduct.css';
-import { ProductMoreInfo } from '../../business/popularproducts/productmoreinfo';
+
 import { Link, Route } from 'react-router-dom'
 
 export class SingleProductUnderList extends React.Component {

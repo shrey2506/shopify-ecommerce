@@ -14,7 +14,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Router } from 'react-router-dom';
 import Client, {Config} from 'shopify-buy';
-import history from '../src/components/page-products/userfilter/history'
+import history from '../src/components/productslistpage/userfilter/history'
 
 
 

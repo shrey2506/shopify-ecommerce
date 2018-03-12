@@ -1,14 +1,14 @@
 import React from 'react';
-import './businesslist.css';
-import { Business } from '../business/business';
-import { PopularProduct } from '../business/popularproducts/popularproducts';
-import { ShopByCategory } from '../business/shopbycategory/shopbycategory';
-import { SingleProductUnderList } from '../page-products/Single-Product-Ui-List/singleproduct';
-import { NavLink, Route } from 'react-router-dom';
-import { Loading } from '../animation/loading';
-import { SingleEventUi } from '../events/eventslist/singleeventui'
+import './mainlists.css';
 
-export class BusinessList extends React.Component {
+
+import { ShopByCategory } from './shopbycategory/shopbycategory';
+import { SingleProductUnderList } from '../../productslistpage/selectproductslist/selectproductlistui/singleproduct';
+import { NavLink, Route } from 'react-router-dom';
+import { Loading } from '../../animation/loading';
+import { SingleEventUi } from '../../events/eventslist/singleeventui'
+
+export class MainLists extends React.Component {
   render() {
     const initialArray=this.props.productsList;
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { UserFilter } from '../../components/page-products/userfilter/userfilter';
+import { UserFilter } from '../../components/productslistpage/userfilter/userfilter';
 
 
 const mapStateToProps = (state) =>{

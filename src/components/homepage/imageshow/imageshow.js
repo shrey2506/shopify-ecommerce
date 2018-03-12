@@ -1,24 +1,19 @@
 import React, { Component } from 'react';
 import './imageshow.css'
 
-import image1b from '/Users/FirstFolder/Documents/projects/shopify api/src/images/image1b.jpg';
 
-import image11 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/image11.jpg';
-import image12 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/image12.jpg';
-import image13 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/image13.jpg';
 
-import familyactivity from '/Users/FirstFolder/Documents/projects/shopify api/src/images/familyactivity.png';
-import ttent from '/Users/FirstFolder/Documents/projects/shopify api/src/images/ttent.jpg';
-import shoe from '/Users/FirstFolder/Documents/projects/shopify api/src/images/shoe.png';
-import speaker from '/Users/FirstFolder/Documents/projects/shopify api/src/images/speaker.jpg';
-import event from '/Users/FirstFolder/Documents/projects/shopify api/src/images/event.jpg';
-import backpack from '/Users/FirstFolder/Documents/projects/shopify api/src/images/backpack.jpg';
-import greentent from '/Users/FirstFolder/Documents/projects/shopify api/src/images/greentent.jpg';
-import b2 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/b2.jpeg';
-import b3 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/b3.jpeg';
-import b4 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/b4.jpeg';
-import b5 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/b5.jpeg';
-import b6 from '/Users/FirstFolder/Documents/projects/shopify api/src/images/b6.jpeg';
+import image11 from '../../../images/image11.jpg';
+import image12 from '../../../images/image12.jpg';
+import image13 from '../../../images/image13.jpg';
+import image1b from '../../../images/image1b.jpg';
+
+import familyactivity from '../../../images/familyactivity.png';
+
+
+import b4 from '../../../images/b4.jpeg';
+
+
 
 
 
@@ -277,7 +272,7 @@ export class ImageShow extends Component {
                             <p className="info-morebtn">check more!</p>
                         </div>
                         <div className="leftimage-container">
-                            <img src={image1b} />
+                            <img src={image12} />
                         </div>
 
                     </div>

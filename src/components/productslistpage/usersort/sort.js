@@ -2,7 +2,7 @@ import React from 'react';
 import './sort.css';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
-import history from '../../page-products/userfilter/history'
+import history from '../userfilter/history'
 
 export const UserSort = (props) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { UserSort } from '../../components/page-products/usersort/sort';
+import { UserSort } from '../../components/productslistpage/usersort/sort';
 
 
 const mapStateToProps =(state)=>{

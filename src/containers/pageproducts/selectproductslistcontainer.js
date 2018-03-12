@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { SelectProductsList } from '../../components/page-products/selectproductslist/selectproductlistui/selectproductslist';
+import { SelectProductsList } from '../../components/productslistpage/selectproductslist/selectproductlistui/selectproductslist';
 
 const mapStateToProps = (state, {match:{params}} ) =>{
 
