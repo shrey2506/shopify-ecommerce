@@ -1,0 +1,36 @@
+.Blog {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ 
+  width: 30%;
+}
+
+@media only screen and (max-width:600px){
+  .Blog {
+    width:80%
+  }
+  
+}
+
+
+
+.Blog .image-container {
+  height:13.66rem;
+  margin-bottom: 1rem
+}
+
+.Blog .digest {
+  font-weight: 100;
+  text-align: justify;
+}
+
+.Blog .title {
+  font-size:.8rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+.personalcenter-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:2rem;
+}
+
+.personalcenter-container .logoutbtn{
+    cursor: pointer;
+
+
+
+}
+
+.personalcenter-container .logoutbtn a:hover {
+    border-bottom: 1px solid lightgray;
+}
+

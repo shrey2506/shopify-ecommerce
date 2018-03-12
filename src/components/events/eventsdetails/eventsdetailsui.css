@@ -1,0 +1,20 @@
+.eventdetailsui-container {
+    padding:2rem;
+}
+
+.eventdetailsui-container img{
+    width:40%
+}
+
+.eventdetailsui-container .title, .image, .content {
+    padding:1.5rem;
+}
+
+.eventdetailsui-container .title, .image {
+    text-align: center;
+}
+
+.eventdetailsui-container .title, .content{
+    font-weight: 100;
+}
+

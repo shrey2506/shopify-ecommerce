@@ -1,0 +1,15 @@
+
+
+.pagetwo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.pagetwo-container .button-container {
+    display: flex;
+    justify-content: center;
+    
+}

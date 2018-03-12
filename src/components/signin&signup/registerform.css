@@ -1,0 +1,15 @@
+.registerform-container {
+    margin: 2rem 0;
+    margin-bottom: 4rem;
+
+}
+
+
+
+.active{
+    display:block;
+}
+
+.inactive{
+    display:none;
+}

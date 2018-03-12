@@ -1,0 +1,43 @@
+.singleitemui-container{
+    margin-bottom: 2rem;
+}
+
+.singleitemui-container-main {
+
+   
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2rem;
+    padding:1rem;
+}
+
+.singleitemui-container hr {
+    width:80%;
+}
+
+.singleitemui-container .removebtn{
+    color:red;
+    cursor: pointer;
+    font-weight: 100;
+    transition:.3s ease;
+}
+
+.singleitemui-container .removebtn:hover{
+    border-bottom: 1px solid red;
+}
+
+
+
+.singleitemui-container .left-container{
+    display:grid;
+    grid-template-columns: 3fr 1fr
+}
+
+.singleitemui-container .size{
+    margin-bottom: 1rem;
+}
+
+.singleitemui-container .selectquantityagain {
+    margin-bottom: 1rem;
+}

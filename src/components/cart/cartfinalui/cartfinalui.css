@@ -1,0 +1,28 @@
+.cartfinalui-container-noresult {
+    margin:3rem;
+}
+
+.cartfinalui-container{
+
+    margin: 3rem;
+  
+ 
+
+}
+
+.cartfinalui-container .main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 1rem;
+}
+
+.cartfinalui-container .main .itemslist{
+    border-right: 1px solid lightgrey
+}
+
+.cartfinalui-container .cartheader{
+
+    margin-bottom: 2rem;
+
+}
+
