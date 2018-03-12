@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import App from './App';
+
 import { AppContainer } from './containers/appcontainer'
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware } from 'redux';
@@ -13,7 +13,7 @@ import { cyan500, red300, lightGreen100, lightGreen400, lightBlack, red400 } fro
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { BrowserRouter, Router } from 'react-router-dom';
-import Client, {Config} from 'shopify-buy';
+
 import history from '../src/components/productslistpage/userfilter/history'
 
 

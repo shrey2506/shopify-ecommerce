@@ -3,9 +3,8 @@ import './registerform.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import { PageOne } from './pageone';
-import { PageTwo } from './pagetwo';
-import { PageThree } from './pagethree';
-import history from '../../components/global components/history'
+
+import history from '../../components/productslistpage/userfilter/history'
 
 
 export class RegisterForm extends React.Component {
@@ -44,10 +43,8 @@ export class RegisterForm extends React.Component {
             }
 
         }
-        this.handlePaymentMethodChange = this.handlePaymentMethodChange.bind(this)
+       
     }
-
-
 
 
     handleEmailBlur() {
@@ -73,10 +70,6 @@ export class RegisterForm extends React.Component {
 
         })
     }
-
-
-
-
 
     handlePasswordBlur(event) {
 
@@ -142,26 +135,6 @@ export class RegisterForm extends React.Component {
 
     }
 
-
-    handleFinalRegisterSubmit(event) {
-
-        const regInfo = {
-            loginStatus: true,
-            loginInfo: {
-                account: this.state.email.value,
-                city: this.state.city.value,
-                address: this.state.address.value,
-                password:this.state.password.value
-            }
-        }
-
-        this.props.handleFinalRegisterSubmit(regInfo);
-        event.preventDefault()
-        console.log(this.props.login)
-
-    }
-
-
     handlePageOneNextClick(event) {
 
         this.handleEmailBlur();
@@ -190,107 +163,9 @@ export class RegisterForm extends React.Component {
             history.push('/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=')
 
 
-
-
         }
-
-        
-
       
     }
-
-    handleCityBlur() {
-        const val = document.getElementById('City').value;
-        if (val == '') {
-            this.setState({
-                city: {
-                    status: false,
-                    errorText: 'required'
-                }
-            })
-            return
-        }
-        this.setState({
-            city: {
-                status: true,
-                value: val
-            }
-        })
-
-    }
-
-    handleAddressBlur() {
-        const val = document.getElementById('Address').value;
-        if (val == '') {
-            this.setState({
-                address: {
-                    status: false,
-                    errorText: 'required'
-                }
-            })
-            return
-        }
-        this.setState({
-            address: {
-                status: true,
-                value: val
-            }
-        })
-
-    }
-
-
-
-
-    handlePageTwoNextClick() {
-        
-       
-        this.handleCityBlur();
-        this.handleAddressBlur();
-        if (this.state.city.status && this.state.address.status) {
-            this.setState({
-                pageIndex: 3,
-            })
-            console.log(this.state.pageIndex)
-            return
-        }
-       
-
-        
-
-    }
-
-    handlePaymentMethodChange(event, index, value) {
-        this.setState({
-            paymentMethod: {
-                status: true,
-                value: value
-            }
-        })
-
-        console.log(this.state.paymentMethod.value)
-
-    }
-
-    handleFinalRegisterSubmit(event) {
-
-        const regInfo = {
-            loginStatus: true,
-            loginInfo: {
-                account: this.state.email.value,
-                city: this.state.city.value,
-                address: this.state.address.value,
-                password:this.state.password.value
-            }
-        }
-
-        this.props.handleFinalRegisterSubmit(regInfo);
-        event.preventDefault()
-        console.log(this.props.login)
-
-    }
-
-
 
     render() {
 
@@ -332,43 +207,6 @@ export class RegisterForm extends React.Component {
                     />
 
                 </div>
-
-                <div className={this.state.pageIndex == 2 ? 'active' : 'inactive'}>
-
-                    <PageTwo
-                        handleCityBlur={this.handleCityBlur.bind(this)}
-                        cityErrorText={this.state.city.errorText}
-                        handleAddressBlur={this.handleAddressBlur.bind(this)}
-                        addressErrorText={this.state.address.errorText}
-                        handlePageTwoPrevClick={() => this.setState({
-                            pageIndex: 1,
-                        })}
-                        handleNextClick={this.handlePageTwoNextClick.bind(this)}
-                    />
-                </div>
-
-                <div className={this.state.pageIndex == 3 ? 'active' : 'inactive'}>
-
-                    <PageThree
-                        paymentMethod={paymentMethodNumber}
-                        handlePaymentMethodChange={(value) => this.setState({
-                            paymentMethod: {
-                                status: true,
-                                value: value
-                            }
-                        })}
-                        handlePageThreePrevClick={() => this.setState({
-                            pageIndex: 2,
-                        })}
-                        handleFinalRegisterSubmit={this.handleFinalRegisterSubmit.bind(this)}
-
-                    />
-
-
-                </div>
-
-
-
 
             </div>
         )

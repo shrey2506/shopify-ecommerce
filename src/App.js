@@ -4,23 +4,23 @@ import './App.css';
 import { ErrorBoundary } from './errorcatch/errorboundary';
 import { Loading } from './components/animation/loading';
 
-import { Header } from './components/header/header';
+
 import { HeaderContainer } from './containers/header/headercontainer'
 import { CategoryBarContainer } from './containers/categorybarcontainer'
 
 import { PageProducts } from './components/productslistpage/finalui/pageproducts';
-import { RegisterForm } from './components/signin&signup/registerform';
+
 import { RegisterFormContainer } from './containers/registerform/registerformcontainer';
-import { RegisterBar } from './components/signin&signup/registerbar';
+
 import { RegisterBarContainer } from './containers/registerform/registerformcontainer';
 import { PersonalCenterContainer } from './containers/registerform/personalcentercontainer';
-import { LoginPage } from './components/signin&signup/loginpage';
+
 import { LoginPageContainer } from './containers/registerform/loginpagecontainer';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Footer } from './components/footer/footer';
 import { HomePageContainer } from './containers/homepagecontainer';
 import Client, {Config} from 'shopify-buy';
-import { ProductDetails } from './components/Product-Details-Page/final/final-ui';
+import { ProductDetails } from './components/productdetailspage/final/final-ui';
 import { CartFinalUiContainer } from './components/cart/cartfinalui/cartfinaluicontainer';
 
 import { TrialContainer } from './components/trial/trialcontainer';
@@ -28,16 +28,6 @@ import { EventsListContainer } from './components/events/eventslist/eventslistco
 import {  EventsDetailsUi } from './components/events/eventsdetails/eventsdetailsui';
 import { TermOfUse } from './components/footer/termofuse/termofuse';
 import { Privacy } from './components/footer/privacy/privacy'
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -49,10 +39,6 @@ class App extends Component {
       shopifyproducts:''
     }
   }
-
-
-  
-
 
 
 
