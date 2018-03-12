@@ -1,15 +1,15 @@
 import React from 'react';
-import { CurrentCategoryContainer } from '../../../containers/pageproducts/currentcategorycontainer';
-import { UserFilterContainer } from '../../../containers/pageproducts/userfiltercontainer';
-import { UserSortContainer } from '../../../containers/pageproducts/usersortcontainer';
-import { SelectProductsListContainer } from '../../../containers/pageproducts/selectproductslistcontainer';
-import './pageproducts.css';
+import { CurrentCategoryContainer } from '../../../containers/productslistpagecontainer/currentcategorycontainer';
+import { UserFilterContainer } from '../../../containers/productslistpagecontainer/userfiltercontainer';
+import { UserSortContainer } from '../../../containers/productslistpagecontainer/usersortcontainer';
+import { SelectProductsListContainer } from '../../../containers/productslistpagecontainer/selectproductslistcontainer';
+import './productslistpage.css';
 
 import { Switch, Route, Router, Link } from 'react-router-dom';
 import history from '../userfilter/history';
 
 
-export const PageProducts = (props)=>{
+export const ProductsListPage = (props)=>{
 
  
     return (

@@ -3,7 +3,7 @@ import { Loading } from '../../animation/loading';
 import { PrimaryButton } from '../.././global components/primarybutton'
 import Client, { Config } from 'shopify-buy';
 import './cartcheckout.css';
-import history from '../../global components/history'
+import history from '../../productslistpage/userfilter/history'
 
 
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { apiCall } from '../action/apicall';
+
 import App from '../App';
 import { withRouter } from 'react-router-dom';
 import { fetchProducts } from '../action/fetchproducts'
@@ -30,7 +30,7 @@ const mapStateToProps =(state)=> {
 const mapDispatchToProps = (dispatch) => {
     return {
 
-        didMount:( term, location, sortBy, limit, offset ) => dispatch(apiCall(term, location, sortBy, limit, offset)),
+       
         fetchProducts:()=>dispatch(fetchProducts()),
         fetchCheckOutProducts:(text)=>dispatch({
             type:"RESTORE_CART",

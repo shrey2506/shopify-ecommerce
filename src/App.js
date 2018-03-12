@@ -3,19 +3,17 @@ import React, { Component } from 'react';
 import './App.css';
 import { ErrorBoundary } from './errorcatch/errorboundary';
 import { Loading } from './components/animation/loading';
-
-
-import { HeaderContainer } from './containers/header/headercontainer'
+import { HeaderContainer } from './containers/headercontainer/headercontainer'
 import { CategoryBarContainer } from './containers/categorybarcontainer'
 
-import { PageProducts } from './components/productslistpage/finalui/pageproducts';
+import { ProductsListPage } from './components/productslistpage/finalui/productslistpage';
 
-import { RegisterFormContainer } from './containers/registerform/registerformcontainer';
+import { RegisterFormContainer } from './containers/signup&signincontainer/registerformcontainer';
 
-import { RegisterBarContainer } from './containers/registerform/registerformcontainer';
-import { PersonalCenterContainer } from './containers/registerform/personalcentercontainer';
+import { RegisterBarContainer } from './containers/signup&signincontainer/registerformcontainer';
+import { PersonalCenterContainer } from './containers/signup&signincontainer/personalcentercontainer';
 
-import { LoginPageContainer } from './containers/registerform/loginpagecontainer';
+import { LoginPageContainer } from './containers/signup&signincontainer/loginpagecontainer';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Footer } from './components/footer/footer';
 import { HomePageContainer } from './containers/homepagecontainer';
@@ -23,7 +21,7 @@ import Client, {Config} from 'shopify-buy';
 import { ProductDetails } from './components/productdetailspage/final/final-ui';
 import { CartFinalUiContainer } from './components/cart/cartfinalui/cartfinaluicontainer';
 
-import { TrialContainer } from './components/trial/trialcontainer';
+import { CheckOutFinishContainer } from './components/checkoutfinishpage/checkoutfinishcontainer';
 import { EventsListContainer } from './components/events/eventslist/eventslistcontainer';
 import {  EventsDetailsUi } from './components/events/eventsdetails/eventsdetailsui';
 import { TermOfUse } from './components/footer/termofuse/termofuse';
@@ -87,12 +85,12 @@ componentWillMount() {
 
  <Route path='/products/productsdetails/:id' render={(props)=><ProductDetails {...props} productsList={this.props.productsList}   />} />
           
-          <Route path='/products' render={(props)=><PageProducts {...props} currentCategory={this.props.currentCategory}/>} />
+          <Route path='/products' render={(props)=><ProductsListPage {...props} currentCategory={this.props.currentCategory}/>} />
           <Route path='/personalcenter' component={PersonalCenterContainer} />
           <Route path='/signin' component={LoginPageContainer} />
           <Route path='/register' component={RegisterFormContainer} />
           <Route path='/cart' component={CartFinalUiContainer}/>
-          <Route path='/cartcheckoutfinished' component={TrialContainer} /> 
+          <Route path='/cartcheckoutfinished' component={CheckOutFinishContainer} /> 
           <Route path='/term-of-use' component={TermOfUse} />
           <Route path='/privacy' component={Privacy} />
          <Route render={() => <div>We dont have such page, maybe you are interested in checking our 

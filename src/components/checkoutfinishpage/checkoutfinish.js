@@ -6,7 +6,7 @@ const client = Client.buildClient({
     storefrontAccessToken: '7db4c7d5a86c66d886c96c6011440d88'
   });
 
-export class Trial extends React.Component {
+export class CheckOutFinish extends React.Component {
     constructor(props){
         super(props)
     }

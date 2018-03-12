@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { Trial } from './trial';
+import { CheckOutFinish } from './checkoutfinish';
 
 
 const mapStateToProps = (state) =>{
@@ -23,4 +23,4 @@ const mapDispatchToProps = (dispatch)=>{
     }
 }
 
-export const TrialContainer = connect (mapStateToProps,mapDispatchToProps)(Trial)
+export const CheckOutFinishContainer = connect (mapStateToProps,mapDispatchToProps)(CheckOutFinish)
