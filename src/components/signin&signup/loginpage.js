@@ -81,15 +81,14 @@ export class LoginPage extends React.Component {
 
         this.handleEmailBlur();
         this.handlePasswordBlur();
-        console.log(this.state.loginEmail.errorText)
-        console.log(this.state.loginPassword.errorText)
+      
         if (this.state.loginEmail.status==false||this.state.loginPassword.status==false){
             
-            console.log('return')
+           
             return
         }
 
-        console.log('see me?')
+     
 
         const usersPool=this.props.usersPool;
         const check=usersPool.find((element)=>

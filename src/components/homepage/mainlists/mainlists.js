@@ -18,8 +18,6 @@ export class MainLists extends React.Component {
       return <Loading />
     }
 
-
-
     return (
       <main className="homepage-main-container">
 

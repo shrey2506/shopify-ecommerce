@@ -155,7 +155,7 @@ export class RegisterForm extends React.Component {
     
             this.props.handleFinalRegisterSubmit(regInfo);
             event.preventDefault();
-            console.log(this.props.login);
+            
             if(this.props.openCheckOut){
                 window.open(this.props.checkOutWebUrl);
                 return;

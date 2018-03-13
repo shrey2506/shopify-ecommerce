@@ -39,7 +39,6 @@ export class SelectProductsList extends React.Component{
         this.props.changeFilterPrice(this.props.filterPrice);
         this.props.changeFilterShipping(this.props.filterShipping);
         this.props.changeSearchTerm(this.props.searchTerm);
-
         window.scrollTo(0,0)
     }
     
@@ -58,8 +57,10 @@ export class SelectProductsList extends React.Component{
    
 
     const afterFilterPriceList = () =>{
+        
        
         if (props.filterPrice=="All") {
+            console.log(productsList)
             
             return productsList;
         }
@@ -143,6 +144,7 @@ export class SelectProductsList extends React.Component{
         
         if (props.sortValue==1){
             return afterCategoryList()
+            console.log(afterCategoryList())
         }
       
         if (props.sortValue==3){
@@ -160,7 +162,9 @@ if (!props.productsList[0]) {
     return <Loading />
 }
 
-if (!afterSortList()[0]) {
+if (afterSortList()==undefined) {
+    console.log(afterCategoryList())
+    console.log(afterFilterPriceList())
     return <div>We cant find the result you need, pleaes try again!</div>
 }
 

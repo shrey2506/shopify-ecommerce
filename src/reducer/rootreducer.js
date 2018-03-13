@@ -1,45 +1,19 @@
 
 
-
 const initialState = {
-
-   
-    isLoading: true,
-   
-    totalNumber:'90',
-    
+     
     currentCategory:'All',
     filterPrice:'All',
     filterShipping:'All',
-   
+    sortValue:1,
     registerForm:false,
     login:{loginStatus:false,
         loginInfo:{
             account: '',
-                city: '',
-                address: '',
                 password: ''
         }},
-    usersPool:[
 
-        {account:"232@fw0.com",
-        password:'1234',
-        city: 'beijing',
-        address: '1502',},
-        {account:"232@fw1.com",
-        password:'12345',
-        city: 'tianjin',
-        address: '1503',},
-        {account:"232@fw2.com",
-        password:'12346',
-        city: 'shanghai',
-        address: '1504',},
-        {account:"123@123.com",
-        password:'0423151Xx$',
-        city: 'shanghai',
-        address: '1504',}
-
-    ],
+    usersPool:[],
     productsList:'',
     collectionList:'',
     checkOutId:'',
@@ -53,8 +27,6 @@ const initialState = {
             date: '2018-04-01',
             brief: 'This covers your meat, rub, fuel, and classroom time. Make sure to bring a chilly bin to take home your BBQ. ​ There are only 16 spots available for each class! Come join us for an afternoon of learning and smoking, rain or shine.',
             content:'<div>Detailed content of the Event: <strong>Rain BBQ on next Saturday!</strong></div>'
-
-
         },
 
         {
@@ -64,7 +36,6 @@ const initialState = {
             date: '2018-04-04',
             brief: 'You are invited to enjoy a lovely afternoon at the Tauranga Historical Society’s annual Vintage Garden Party in the lovely garden of the Brain Watkins House Museum on the corner of Cameron Road and Elizabeth Street.',
             content:'<div>Detailed content of the Event: <strong>Garden Party on next Monday!</strong></div>'
-
 
         },
         {
@@ -76,8 +47,6 @@ const initialState = {
             content:'<div>Detailed content of the Event: <strong>Family competition games on next Thursday!</strong></div>'
         },
 
-
-            
     ],
 }
 
@@ -85,26 +54,7 @@ const initialState = {
 
 export const rootReducer = (state=initialState, action) =>{
     switch (action.type) {
-        case "NEW_OPTIONS":
-        return Object.assign({},state,{sortBy:action.text})    
-        
-        case "NEW_TERM":
-        return Object.assign({},state,{term:action.text})  
-
-        case "NEW_LOCATION":
-        return Object.assign({},state,{location:action.text}) 
-        
-        case "NEW_BUSINESSES":
-        return Object.assign({},state,{businesses:action.text})
-
-        case "NEW_TOTALNUMBER":
-        return Object.assign({},state,{totalNumber:action.text})
-
-        case "CHANGE_ISLOADING":
-        return Object.assign({},state,{isLoading:false})
-
-        case "ERROR":
-        return Object.assign({},state,{error:action.text})
+   
 
         case "CHANGE_CATEGORY":
         return Object.assign({},state,{currentCategory:action.text})
@@ -122,7 +72,7 @@ export const rootReducer = (state=initialState, action) =>{
         return Object.assign({},state,{searchTerm:action.text})
 
         case "CHANGE_LOGIN":
-        return Object.assign({},state,{login:action.text})
+        return Object.assign({},state,{login:action.text},{usersPool:[...state.usersPool, action.text.loginInfo]})
 
         case "LOG_OUT":
         return Object.assign({},state,{login:{loginStatus:false,
