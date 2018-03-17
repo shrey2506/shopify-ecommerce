@@ -3,14 +3,35 @@ import { CurrentCategoryContainer } from '../../../containers/productslistpageco
 import { UserFilterContainer } from '../../../containers/productslistpagecontainer/userfiltercontainer';
 import { UserSortContainer } from '../../../containers/productslistpagecontainer/usersortcontainer';
 import { SelectProductsListContainer } from '../../../containers/productslistpagecontainer/selectproductslistcontainer';
+import { UserFilterMobileContainer } from '../../../containers/productslistpagecontainer/userfiltermobilecontainer'
 import './productslistpage.css';
 
 import { Switch, Route, Router, Link } from 'react-router-dom';
 import history from '../userfilter/history';
 
 
-export const ProductsListPage = (props)=>{
+export class ProductsListPage extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+            
+           
+        }
+        this.handleFilterBtnClick=this.handleFilterBtnClick.bind(this)
+    }
 
+handleFilterBtnClick(){
+
+ 
+    history.push({
+        pathname:'/products/userfiltermobile',
+        state:{from:this.props.location.pathname}
+    })
+    
+}
+render(){
+
+    const props=this.props;
  
     return (
 
@@ -26,7 +47,16 @@ export const ProductsListPage = (props)=>{
         <Link to={`/products/list/category=${props.currentCategory}&price=All&shipping=All&sortValue=1&searchTerm=`}>{`${props.currentCategory}`}</Link>
         </div>
 
-        <div className="headline">
+        <div className='filterbtn' onClick={this.handleFilterBtnClick}>
+
+        <i class="material-icons">format_list_bulleted </i> Filter</div>
+
+     
+
+
+        
+
+        <div className='headline'>
             <div>
             <CurrentCategoryContainer />
             </div>
@@ -36,27 +66,13 @@ export const ProductsListPage = (props)=>{
         </div>
             
 
-        <div className="maincontent">
+        <div className='maincontent'>
             <div className="sidebar">
             <UserFilterContainer />
             </div>
 
             <div className="productlist">
-
-
-
-            <Switch>
-            
-
-
-      
             <Route path="/products/list/:id" component = {SelectProductsListContainer} />
-
-            </Switch >
-
-
-
-
             </div>
         </div>
          
@@ -65,4 +81,6 @@ export const ProductsListPage = (props)=>{
         </div>
 
     )
+}
+
 }

@@ -1,12 +1,16 @@
-.header-container {
+.header-ipadpro, .header-mobile .logo-cart {
     display:flex;
     width:100%;
     justify-content: space-around;
-    padding: 1rem;
+    padding-top:1rem;
+    padding-bottom: 1rem;
     align-items: center;
+    
 }
 
-.header-left{
+
+
+.header-ipadpro .header-left, .header-mobile .header-left{
     display:flex;
     align-items: center;
    
@@ -14,12 +18,14 @@
 
 }
 
-.header-search {
+.header-ipadpro .header-search-ipadpro {
     display:flex;
     align-items: center;
 }
 
-.header-input {
+
+
+.header-input{
    
     padding: .47rem 1rem;
     font-size: .77rem;
@@ -65,7 +71,7 @@
 
 
 
-.header-h2{
+.header-ipadpro .header-h2, .header-mobile .header-h2{
     
     margin-right:2.22rem;
     margin-left:1.22rem;
@@ -75,32 +81,31 @@
 
 }
 
-.header-button:hover{
+.header-ipadpro .header-button:hover{
     background-color: rgb(240, 104, 70);
     color:white;
     
 }
 
-.header-button:active {
+.header-ipadpro .header-button:active {
     background-color: rgb(136, 32, 6);
     color:white;
     
 }
 
 
-.header-right {
+.header-ipadpro .header-right, .header-mobile .header-right {
    
     display: flex;
     justify-content: flex-end;
     width:50%;
     align-items: center;
     
-   
-    
     margin-right:1.5rem;
+    
 }
 
-.header-container .header-right .eventsbtn, .header-container .header-right .productsbtn {
+.header-ipadpro .eventsbtn, .header-ipadpro .productsbtn {
 
     font-family: Arial, Helvetica, sans-serif;
     margin: .8rem;
@@ -108,20 +113,160 @@
     cursor: pointer;
 }
 
-.header-container .header-right .productsbtn:hover, .eventsbtn:hover {
+.header-ipadpro .productsbtn:hover,.header-ipadpro .eventsbtn:hover {
     border-bottom: 1px solid red;
 }
 
-.header-right .cart {
+.header-ipadpro .cart, .header-mobile .logo-cart .cart {
     cursor: pointer;
     padding-left:1rem;
     margin-left:1rem;
     border-left: 1px solid lightgrey;
+    font-size: 1.1rem;
   
 }
 
-.header-right .cart:hover {
+.header-ipadpro .cart:hover, .header-mobile .cart:hover{
     color:rgb(2, 2, 46)
 }
 
 
+.header-search-ipad{
+   display:none;
+
+}
+
+
+
+
+
+.header-btns-mobile {
+  
+    display:none;
+}
+
+.header-btns-mobile .eventsbtn, .productsbtn{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: .8rem;
+    color:#EF5D25;
+    cursor: pointer;
+    margin-right:2rem;
+}
+
+.header-btns-mobile .activebtn, .header-ipadpro .activebtn{
+    color:blue;
+}
+
+.header-btns-mobile .eventsbtn:hover,.header-btns-mobile .productsbtn:hover{
+    border-bottom: 1px solid red;
+    color:#EF5D25;
+    
+
+}
+
+
+.header-search-mobile {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+
+.header-search-mobile form {
+    display:flex;
+    align-items: center;
+    width:95%;
+    justify-content: center;
+}
+
+.header-search-mobile .header-input{
+    width:90%;
+}
+
+.header-btns-mobile {
+    display:flex;
+    
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+   
+}
+
+
+.header-ipadpro{
+    display:none
+}
+
+
+
+
+
+.header-search-ipad {
+    display:none;
+
+}
+
+@media only screen and (min-width: 700px) {
+    .header-mobile{
+        display:none
+    }
+
+    .header-ipadpro{
+        display:flex;
+    }
+
+    .header-ipadpro .header-right{
+        width:70%;
+    }
+
+
+    .header-search-ipad {
+        display:block;
+       
+    }
+
+    .header-search-ipad .header-input {
+        width:80%;
+    }
+
+    .header-search-ipad form {
+
+        display:flex;
+        align-items: center;
+        width:100%;
+        justify-content: center;
+   
+    }
+
+    .header-ipadpro .header-search-ipadpro {
+        display:none;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+    .header-search-ipad {
+        display:none;
+    
+    }
+
+    .header-ipadpro .header-search-ipadpro {
+        display:flex;
+    }
+    
+
+
+    .header-ipadpro .header-right {
+        width:80%;
+    }
+
+}
+
+
+
+   
+
+
+
+  

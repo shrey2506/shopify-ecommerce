@@ -1,5 +1,6 @@
 .leftuisizetable-container {
     width:100%;
+
 }
 .leftuisizetable-container table {
     font-family: arial, sans-serif;
@@ -16,3 +17,8 @@
 .leftuisizetable-container tr:nth-child(even) {
     background-color: #dddddd;
 }
+
+
+
+
+

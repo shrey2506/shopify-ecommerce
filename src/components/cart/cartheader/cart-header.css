@@ -1,10 +1,21 @@
 .cartheader-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2rem;
+    background: #F7F7F7;
+    padding:1.5rem .5rem;
+
+   
+  
+    align-items: center;
 }
 
 .cartheader-container .keepshoppingbtn button {
     padding:.4rem;
     border-radius: 4px;
     cursor: pointer;
+    background: white;
+    outline:none;
+    
+
 }

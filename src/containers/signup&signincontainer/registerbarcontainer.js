@@ -10,8 +10,8 @@ const mapStateToProps = (state) =>{
 }
 
 const mapDispatchToProps = (dispatch)=>{
-    return 
-    
+    return {
+    }
 }
 
 export const RegisterBarContainer = connect (mapStateToProps,mapDispatchToProps)(RegisterBar)

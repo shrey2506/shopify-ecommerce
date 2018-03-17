@@ -6,6 +6,7 @@ import { RightShippingPolicyUi } from '../right-shipping-policy-ui/right-shippin
 import { PrimaryButton } from '../../../global components/primarybutton';
 import './right-final-ui.css';
 import { Route, Switch, Link } from 'react-router-dom';
+import {  LeftUiSizeTable } from '../../leftpart/left-sizetable/left-ui-sizetable'
 
 
 
@@ -111,6 +112,11 @@ export class ProductDetailsRightUi extends React.Component {
                 <div className="shippingpolicy">
                     <RightShippingPolicyUi selectedProduct={selectedProduct} />
                 </div>
+                <div className="sizetable">
+                <LeftUiSizeTable selectedProduct={this.props.selectedProduct}/>
+                </div>
+
+
 
             </div>
         )

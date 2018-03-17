@@ -13,9 +13,7 @@ export class SelectProductsList extends React.Component{
     constructor(props){
         super(props)
         this.state={
-
         }
-
     }
 
     componentDidMount() {
@@ -50,9 +48,9 @@ export class SelectProductsList extends React.Component{
     const props=this.props;
 
 
-    const initialProductsList = props.businesses;
+    
     const productsList=props.productsList;
-    console.log(productsList)
+    
   
    
 

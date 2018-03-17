@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import { UserFilter } from '../../components/productslistpage/userfilter/userfilter';
+import { UserFilterMobile } from '../../components/productslistpage/userfiltermobileversion/userfiltermobile';
 
 
 const mapStateToProps = (state) =>{
@@ -36,4 +36,4 @@ const mapDispatchToProps = (dispatch)=>{
     }
 }
 
-export const UserFilterContainer = connect (mapStateToProps,mapDispatchToProps)(UserFilter)
+export const UserFilterMobileContainer = connect (mapStateToProps,mapDispatchToProps)(UserFilterMobile)

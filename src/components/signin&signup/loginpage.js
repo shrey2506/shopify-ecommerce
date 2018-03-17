@@ -83,12 +83,9 @@ export class LoginPage extends React.Component {
         this.handlePasswordBlur();
       
         if (this.state.loginEmail.status==false||this.state.loginPassword.status==false){
-            
            
             return
         }
-
-     
 
         const usersPool=this.props.usersPool;
         const check=usersPool.find((element)=>

@@ -13,12 +13,27 @@ export class HeaderSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchTerm: ''
+            searchTerm: '',
+            clickedBtn: '',
+            currentUrl: window.location.pathname
         };
-        this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.onMenuClick = this.onMenuClick.bind(this);
+        this.onRegisterBarClick = this.onRegisterBarClick.bind(this);
     }
 
+    componentDidMount() {
+        history.listen((location, action) => {
+            // location is an object like window.location
+            console.log(action, location.pathname, location.state)
+            this.setState({
 
+                currentUrl: location.pathname
+
+            })
+        })
+
+    }
     handleInputChange(event) {
 
         event.preventDefault();
@@ -31,10 +46,6 @@ export class HeaderSearch extends React.Component {
 
 
     }
-
-
-
-
     handleRegisterClick(event) {
 
         this.props.handleRegisterClick();
@@ -46,45 +57,118 @@ export class HeaderSearch extends React.Component {
         this.props.onLogoClick('')
     }
 
+    onMenuClick(event) {
+        this.setState({
+            clickedBtn: event.target.title,
+
+        })
+        console.log(this.state.currentUrl)
+        console.log(window.location.pathname)
+
+    }
+
+    onRegisterBarClick(value) {
+        this.setState({
+            clickedBtn: value,
+        })
+
+    }
+
     render() {
 
         return (
-            <div className="header-container">
+            <div className="header-final-container">
+            
+                <div className="header-ipadpro">
 
-                <div className="header-left">
+                    <div className="header-left">
+                        <Link to='/'><h2 className="header-h2" onClick={this.onLogoClick.bind(this)}>FamilyFun</h2></Link>
+
+                        <form className="header-search-ipadpro" onSubmit={this.handleInputChange.bind(this)}>
+
+                            <input type="text" id="clearaftercategoryclick" className="header-input" placeholder="Search Our Products..." />
+                            <input type="submit" value="Search" className="header-button" />
+
+                        </form>
+                    </div>
+                    <div className="header-right">
+
+                        <div><Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='
+                            className={this.state.currentUrl.includes('products') ? "productsbtn activebtn" : 'productsbtn'}>
+                            Products
+                    </Link>
+                            <Link to='/events/list' className={this.state.currentUrl.includes('events') ? 'eventsbtn activebtn' : "eventsbtn"}>
+                                Events
+
+                    </Link>
+                        </div>
+                        <div className="registerbar">
+                            <RegisterBarContainer currentUrl={this.state.currentUrl} />
+                        </div>
+
+                        <Link to='/cart' className="cart"><i class="fa fa-cart-arrow-down"></i></Link>
+
+                    </div>
+
+                </div>
+
+            
 
 
-                    <Link to='/'><h2 className="header-h2" onClick={this.onLogoClick.bind(this)}>FamilyFun</h2></Link>
+
+                <div className="header-search-ipad">
+                    <form className="header-search" onSubmit={this.handleInputChange.bind(this)}>
+
+                        <input type="text" id="clearaftercategoryclick" className="header-input" placeholder="Search Our Products..." />
+                        <input type="submit" value="Search" className="header-button" />
+
+                    </form>
+                </div>
+
+                <div className='header-mobile'>
+
+                <div className="logo-cart">
+
+                    <div className="header-left">
+                        <Link to='/'><h2 className="header-h2" onClick={this.onLogoClick.bind(this)}>FamilyFun</h2></Link>
+
+                    </div>
+                    <div className="header-right">
+                        <Link to='/cart' className="cart"><i class="fa fa-cart-arrow-down"></i></Link>
+                    </div>
+                </div>
+
+                <div className="header-btns-mobile">
+
+                    <div>
+
+                        <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='
+                            onClick={this.onMenuClick}
+                            title="Products"
+                            className={this.state.currentUrl.includes('products') ? "productsbtn activebtn" : 'productsbtn'}>
+                            Products
+</Link>
+                        <Link to='/events/list'
+                            onClick={this.onMenuClick}
+                            title="Events"
+                            className={this.state.currentUrl.includes('events') ? 'eventsbtn activebtn' : "eventsbtn"}>Events</Link>
+                    </div>
+                    <div className="registerbar"><RegisterBarContainer currentUrl={this.state.currentUrl} /></div>
+                </div>
 
 
+
+                <div className="header-search-mobile">
                     <form className="header-search" onSubmit={this.handleInputChange.bind(this)}>
 
                         <input type="text" id="clearaftercategoryclick" className="header-input" placeHolder="search..." />
                         <input type="submit" value="Search" className="header-button" />
 
                     </form>
-
+                </div>
 
                 </div>
-                <div className="header-right">
 
-
-
-                    <div><Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=' className="productsbtn">
-                    Products
-                    </Link>
-                    <Link to='/events/list' className="eventsbtn">
-                    Events
-
-                    </Link>
-                    </div>
-                    <div className="registerbar">
-                        <RegisterBarContainer />
-                    </div>
-
-                    <Link to='/cart' className="cart"><i class="fa fa-cart-arrow-down"></i></Link>
-
-                </div>
 
 
 

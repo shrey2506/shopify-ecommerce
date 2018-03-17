@@ -7,18 +7,25 @@ export const ShopByCategory = (props) => {
     const linkTo=`/products/list/category=${props.product.title}&price=All&shipping=All&sortValue=1&searchTerm=`
          
     return (
-        <div className='shopbycategory-container'>
+        
+        <div className='shopbycategory-container'><Link to={linkTo}><div className="inner-container">
 
-            <Link to={linkTo}> <div className='image-container'>
+
+
+            <div className='image-container'>
             <img src={props.product.imageSrc} alt="image"/>
-            </div></Link>
+            </div>
 
            
-
-            <Link to={linkTo}><div className='content'>
+           
+            <div className='content'>
                 {props.product.title}
-            </div></Link>
+            </div>
 
+            <div className="detailsbtn"> > </div></div></Link>
+
+        
         </div>
+        
     )
 }

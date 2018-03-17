@@ -18,6 +18,8 @@ export const Footer = () => {
                     <div className="mission">We make life easier!</div>
                 </div>
 
+
+                <hr/>
                 <hr/>
 
 

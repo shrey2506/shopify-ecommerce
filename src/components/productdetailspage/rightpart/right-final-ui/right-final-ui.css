@@ -9,3 +9,11 @@
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
+
+@media only screen and (min-width:500px) {
+
+    .productdetailsrightui-container .sizetable{
+        display:none;
+    }
+}
+

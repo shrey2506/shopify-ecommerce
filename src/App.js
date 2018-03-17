@@ -25,7 +25,8 @@ import { CheckOutFinishContainer } from './containers/checkoutfinishipagecontain
 import { EventsListContainer } from './containers/eventspagecontainer/eventslistcontainer';
 import {  EventsDetailsUi } from './components/eventspage/eventsdetails/eventsdetailsui';
 import { TermOfUse } from './components/footer/termofuse/termofuse';
-import { Privacy } from './components/footer/privacy/privacy'
+import { Privacy } from './components/footer/privacy/privacy';
+import { UserFilterMobileContainer } from './containers/productslistpagecontainer/userfiltermobilecontainer'
 
 
 
@@ -71,6 +72,7 @@ componentWillMount() {
 
 
         <HeaderContainer />
+       
         <CategoryBarContainer />
         <Switch>
 
@@ -84,7 +86,7 @@ componentWillMount() {
             <Route path='/events/details/:id' render={(props)=><EventsDetailsUi {...props} events={this.props.events} />}/>
 
  <Route path='/products/productsdetails/:id' render={(props)=><ProductDetails {...props} productsList={this.props.productsList}   />} />
-          
+          <Route path='/products/userfiltermobile' component={ UserFilterMobileContainer } />
           <Route path='/products' render={(props)=><ProductsListPage {...props} currentCategory={this.props.currentCategory}/>} />
           <Route path='/personalcenter' component={PersonalCenterContainer} />
           <Route path='/signin' component={LoginPageContainer} />
@@ -102,6 +104,7 @@ componentWillMount() {
         </Switch>
 
         <Footer />
+      
 
       </div>
 

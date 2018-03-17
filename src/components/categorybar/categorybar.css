@@ -1,10 +1,14 @@
 .head-categories{
-    display:flex;
+    display:none;
     justify-content: center;
     border-top: 1px solid rgb(235, 233, 233);
     border-bottom: 1px solid rgb(235, 233, 233);  
     margin-bottom: -1rem;  
+    
+
 }
+
+
 
 .head-categories a {
    
@@ -26,4 +30,10 @@
 .head-categories .active {
     color:blue
 
+}
+
+@media only screen and (min-width:700px) {
+    .head-categories{
+        display: flex;
+    }
 }

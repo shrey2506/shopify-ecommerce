@@ -6,10 +6,8 @@ const mapStateToProps = (state, {match:{params}} ) =>{
  
     const totalSelectValue=params.id.split('&').map((val)=>val.split('=')[1]);
 
-    
-
     return {
-        businesses:state.businesses,
+        
         currentCategory:totalSelectValue[0],
         filterPrice:totalSelectValue[1],
         filterShipping:totalSelectValue[2],

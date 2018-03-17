@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import './imageshow.css'
-
-
-
 import image11 from '../../../images/image11.jpg';
 import image12 from '../../../images/image12.jpg';
 import image13 from '../../../images/image13.jpg';
@@ -12,6 +9,7 @@ import familyactivity from '../../../images/familyactivity.png';
 
 
 import b4 from '../../../images/b4.jpeg';
+import {Link} from 'react-router-dom';
 
 
 
@@ -25,11 +23,13 @@ export class ImageShow extends Component {
         this.state = {
             position: 1,
             direction: '',
-            interval:true
+            interval:true,
+       
 
         }
         this.handleClickPlus = this.handleClickPlus.bind(this);
         this.handleClickMinus = this.handleClickMinus.bind(this);
+      
     }
 
     componentDidMount() {
@@ -62,6 +62,8 @@ export class ImageShow extends Component {
     componentWillUnmount (){
         clearInterval(this.state.myInterval)
     }
+
+  
 
 
     handleClickPlus(event) {
@@ -106,6 +108,18 @@ export class ImageShow extends Component {
      
             }
 
+   imageNumber (){
+                if (this.state.position==1){
+                    return 1;
+                }
+                if (this.state.position==3){
+                    return 2;
+                }
+                if (this.state.position==2){
+                    return 3;
+                }
+    
+            }
 
     render() {
 
@@ -173,10 +187,6 @@ export class ImageShow extends Component {
                 transition: ' .6s ease'
             }
 
-
-
-
-
         }
 
 
@@ -198,11 +208,6 @@ export class ImageShow extends Component {
                 transition: 'transform .6s ease'
 
             }
-
-
-
-
-
         }
 
 
@@ -247,64 +252,95 @@ export class ImageShow extends Component {
 
         }
 
+ 
+
 
         return (
             <div className="imageshow-container">
 
                 <div className="imageshow-left-container">
 
+                   <Link to='/products/productsdetails/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzE5NDkwMTM3NzAzNg=='>
+
+
                     <div className='imageshow-left imageshow-left-01' style={styleimage1}>
 
                         <div className="info">
-                            <p className="info-title">01 The first 100% waterproof shoes in the world!</p>
-                            <p className="info-morebtn">check more!</p>
+                            <p className="info-title">6pcs Wooden Puppet Toys Cartoon Family Dolls for Children Play House Gift</p>
+                            
                         </div>
                         <div className="leftimage-container">
                             <img src={image11} />
                         </div>
+                       
 
                     </div>
+                    </Link>
+
+                    <Link to='/products/productsdetails/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzE5NDkwMTQ0MjU3Mg=='>
 
                     <div className='imageshow-left imageshow-left-02' style={styleimage2}>
 
                         <div className="info">
-                            <p className="info-title">02 Sleep in the rain, just Enjoy!</p>
-                            <p className="info-morebtn">check more!</p>
+                        <div>
+                        
+                         
+                            <p className="info-title">Hot Sale Family Mommy And Me Women Short Cami Top</p>
+                          
                         </div>
+                       
+                            
+                        </div>
+                       
+                       
                         <div className="leftimage-container">
-                            <img src={image12} />
+                                  <img src={image12} />
+                           
                         </div>
-
+                        
                     </div>
+
+                    </Link>
+
+                    <Link to='/products/productsdetails/Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzE5NDkwMTgwMzAyMA=='>
+
                     <div className='imageshow-left imageshow-left-03' style={styleimage3}>
 
                         <div className="info">
-                            <p className="info-title">03 Dryer than the Sahara during a downpour</p>
-                            <p className="info-morebtn">check more!</p>
+                            <p className="info-title">Matching Skeleton Family Outfits - Halloween Christmas</p>
+                            
                         </div>
                         <div className="leftimage-container">
                             <img src={image13} />
                         </div>
 
+                       
+                      
+
                     </div>
+                    </Link>
 
                     <a className="prev" name="left" onClick={this.handleClickPlus}>&#10094;</a>
                     <a className="next" name="right" onClick={this.handleClickMinus}>&#10095;</a>
 
-                    <div className="spotshow">
-                        <span className={this.state.position == 3 ? 'active' : ''}></span>
-                        <span className={this.state.position == 2 ? 'active' : ''}></span>
-                        <span className={this.state.position == 1 ? 'active' : ''}></span>
+                    
+                    <div className='imagenumber'>{this.imageNumber()} / 3</div>
+
+                    <div style={{display:'none'}} className="spotshow">
+                    
+                        <span className={this.state.position == 3 ? 'active' : ''}>3</span>
+                        <span title='spot2' className={this.state.position == 2 ? 'active' : ''}>2</span>
+                        <span title='spot3' className={this.state.position == 1 ? 'active' : ''}>1</span>
 
                     </div>
                 </div>
 
                 <div className="imageshow-right-container">
                     
-                    <div className="event">
-                        <img src={familyactivity} />
+                    <div className="event"><Link to='/events/list'>
+                        <img src={familyactivity} /></Link>
                     </div >
-                    <p style={styleimage5} className="joinbtn" > Join our fantastic FamilyFun events!</p>
+                    <div><Link to='/events/list'><p style={styleimage5} className="joinbtn" > Join our fantastic FamilyFun events!</p></Link></div>
                 </div>
 
             </div>

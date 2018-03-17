@@ -6,8 +6,10 @@
     align-items: center;
     
     
-   
+}
 
+.registerbar-container .activebtn{
+    color:blue
 }
 
 .registerbar-container .inactive{
@@ -32,7 +34,7 @@
 }
 
 .registerbar-container .login-signin {
-    color:#EF5D25;
+    
     border: 1px solid #EF5D25;
     padding: .34rem 1rem;
     border-radius:4px;

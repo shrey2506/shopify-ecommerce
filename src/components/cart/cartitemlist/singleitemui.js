@@ -45,66 +45,68 @@ export const CartSingleItemUi = (props) => {
 
         <div className="singleitemui-container">
 
-        <div className="singleitemui-container-main">
-
-        
+            <div className="singleitemui-container-main">
 
 
 
 
 
-            <div className="left-container">
-            <div>
 
-             <div className="image" ><img style={{ width:'10rem' }} src={item.imageSrc} alt="image" /></div>
-          
 
-                <div className="title"><p><strong>Title:</strong> {item.title}</p></div>
+                <div className="left-container">
+                    <div>
+
+                        <div className="image" ><img src={item.imageSrc} alt="image" /></div>
+
+
+                        <div className="title"><p><strong>Title:</strong> {item.title}</p></div>
+
+                    </div>
+                    <div>
+
+                        <div className="size"><p><strong>Size:<br /></strong> {item.size}</p></div>
+
+                        <div className="price"><p><strong>Unit Price:<br /></strong> NZ${item.price}</p></div><br />
+                        <div className="shipping"><p><strong>Shipping:<br /></strong>  {item.shipping} day(s)</p></div>
+
+                    </div>
+
 
                 </div>
-                <div>
-
-                <div className="size"><p><strong>Size:<br/></strong> {item.size}</p></div>
 
 
-                
-                <div className="price"><p><strong>Unit Price:<br/></strong> NZ${item.price}</p></div>
+                <div className="right-container">
+
+
+                    <div className='removebtn-container'><a className="removebtn" onClick={handleRemoveClick}>Remove</a></div>
+
+
+
+                    <div style={{ width: '2rem' }} className="selectquantityagain" onClick={handleSelectQuantityClick}>
+                        <SelectField
+                            floatingLabelText="Change quantity"
+                            value={props.product.quantity}
+                            onChange={handleSelectQuantityClick}
+                            maxHeight={200}
+
+                        >
+
+                            {items}
+
+                        </SelectField>
+                    </div>
+
+
+
                 </div>
 
-  </div>
 
-               
-            <div className="right-container">
-
-                
-                <div><a className="removebtn" onClick={handleRemoveClick}>Remove</a></div>
-
-                
-
-                <div className="selectquantityagain" onClick={handleSelectQuantityClick}>
-                    <SelectField
-                        floatingLabelText="Change quantity"
-                        value={props.product.quantity}
-                        onChange={handleSelectQuantityClick}
-                        maxHeight={200}
-                    >
-
-                        {items}
-
-                    </SelectField>
-                </div>
-                <div className="shipping">Ready to be shipped within {item.shipping} days</div>
 
 
             </div>
-
-
-
-
-        </div>
-        <div className="hr">
-    <hr />
-</div>
+            <div className="hr">
+                <hr />
+            </div>
 
         </div>
     )

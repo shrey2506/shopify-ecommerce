@@ -10,11 +10,11 @@ export const ProductDetailsLeftUi = (props) => {
 
 
     return (
-        <div>
+        <div className='leftfinaluicontainer'>
             <div>
                 <ProductLeftImage selectedProduct={props.selectedProduct} />
             </div>
-            <div>
+            <div className='leftuisizetable'>
               
                
                <LeftUiSizeTable selectedProduct={props.selectedProduct}/>

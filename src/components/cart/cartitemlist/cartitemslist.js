@@ -41,12 +41,8 @@ export class CartItemsList extends React.Component{
 
     return (
 
-        <div> 
+        <div > 
             {this.props.checkOutProducts.map((product)=>{
-            
-          
-
-           
 
             return <CartSingleItemUi 
             

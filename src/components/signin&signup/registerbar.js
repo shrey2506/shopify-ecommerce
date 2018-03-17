@@ -3,6 +3,7 @@ import './registerbar.css';
 import { Link } from 'react-router-dom';
 
 
+
 export const RegisterBar = (props) => {
 
     return (
@@ -13,8 +14,9 @@ export const RegisterBar = (props) => {
 
                 <div>
 
-                    <Link to='/register' className="login-register">Register</Link>
-                    <Link to='/signin' className="login-signin">Sign In</Link>
+                    <Link to='/register' className={props.currentUrl.includes('register')?"login-register activebtn":'login-register'}
+                    >Register</Link>
+                    <Link to='/signin' className={props.currentUrl.includes('signin')?"login-signin activebtn":"login-signin"} >Sign In</Link>
 
                 </div>
 

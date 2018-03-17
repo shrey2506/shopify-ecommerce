@@ -9,8 +9,13 @@
  
 }
 
+.imageshow-container {
+    display: none;
+ }
+
+
 .imageshow-left-container {
-    grid-column: 1 / span 4;
+    grid-column: 1 / 5;
     display:flex;
    
     position:relative;
@@ -27,14 +32,13 @@
     position: absolute;
     height:100%;
 
-
-    
     
 }
 
 .imageshow-left::after {
     content:'';
     background-image: url('../../../images/b4.jpeg');
+    border-radius: 4px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -48,6 +52,8 @@
  
 
 }
+
+
 
 .imageshow-left-01 {
 
@@ -64,11 +70,25 @@
     
 }
 
+.imageshow-left-container .imagenumber{
+    font-family: sans-serif;
+    position: absolute;
+
+    color:rgb(8, 8, 36);
+    font-weight: 100;
+  
+    left:50%;
+    transform:translate(-50%);
+    bottom:0;
+    font-size: 1rem;
+    display: none;
+
+}
 
 
 .imageshow-container .prev, .next {
     position: absolute;
-    color:white;   
+    color:black;   
     cursor:pointer;
     top: 50%;
     transform: translateY(-50%);
@@ -79,8 +99,8 @@
     border-radius: 0 3px 3px 0;
     display: none;
    
-    background-color: black;
-    opacity:.5
+    background-color: white;
+    opacity:.6
 }
 
 .imageshow-container .next{
@@ -116,8 +136,6 @@
     height:100%;
     padding:1.4rem;
     padding-top:3.4rem;
-    
-
     text-align:center;
     color:white;
     font-size: 1.3rem;
@@ -196,13 +214,10 @@
 
 .imageshow-right-container .event img{
     flex:7;
-    
-    
     width:100%;
     border-radius: 4px;
     object-fit: fill;
 
-    
 }
 
 .imageshow-right-container p {
@@ -210,7 +225,6 @@
     padding: 1.5rem;
     background-color: rgb(209, 146, 146);
     margin-top:.2rem;
- 
     border-radius: 4px;
     color: white;
     font-size:1rem;
@@ -220,7 +234,25 @@
 
 }
 
-.imageshow-right-container .joinbtn {
-    flex:5
+
+
+@media only screen and (min-width:700px) {
+
+    .imageshow-container {
+        display:grid;
+    }
+
+    .imageshow-right-container p{
+        padding:.5rem;
+    }
+
+}
+
+@media only screen and (min-width:1024px) {
+
+    .imageshow-right-container p{
+        padding:1.5rem;
+    }
+
 }
 

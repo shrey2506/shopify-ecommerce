@@ -1,9 +1,9 @@
 import React from 'react';
-import './singleproduct.css';
+import './singleproductlistui.css';
 
 import { Link, Route } from 'react-router-dom'
 
-export class SingleProductUnderList extends React.Component {
+export class SingleProductListUi extends React.Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +16,7 @@ export class SingleProductUnderList extends React.Component {
 
         return (
 
-            <div className='productdetailspage-single-product-container'>
+            <div className='homepage-single-product-container'>
 
          
                 <div className='image-container'>
@@ -26,24 +26,39 @@ export class SingleProductUnderList extends React.Component {
                 <div className='content-container'>
 
                     <div className='name'>
-                        <div>{this.props.product.title}</div>
+                        <p>{this.props.product.title}</p>
                     </div>
-                    
+
+                 
+
                     <div className='price'>
-                        <div>NZD{this.props.product.variants[0].price}</div>
+                        <p>NZD{this.props.product.variants[0].price}</p>
                     </div>
                 </div>
+
+
 
                 <Link to={`/products/productsdetails/${this.props.product.id}`}><div className={this.state.hoverOn?"displaynone":"morebtn"} >
                     <a >more ></a>
                 </div></Link>
+               
+
+            
+
+
+                <div>
+
+                  
                 
+                </div>
+
+     
+
+
+
             </div>
 
 
         )
     }
 }
-
-
-
