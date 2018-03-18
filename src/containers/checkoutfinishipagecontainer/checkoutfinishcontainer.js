@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { CheckOutFinish } from '../../components/checkoutfinishpage/checkoutfinish';
 
 

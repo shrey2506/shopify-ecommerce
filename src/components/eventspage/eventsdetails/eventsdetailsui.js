@@ -17,7 +17,7 @@ export const EventsDetailsUi=(props)=>{
           </div>
 
           <div className="image">
-          <img src={selectedEvent.imageSrc} alt="family events image" />
+          <img src={selectedEvent.imageSrc} alt="family events images" />
             </div>
 
             <div className="content" dangerouslySetInnerHTML={{ __html:html }}>

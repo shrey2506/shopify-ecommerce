@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import { ErrorBoundary } from './errorcatch/errorboundary';
-import { Loading } from './components/animation/loading';
+
+
 import { HeaderContainer } from './containers/headercontainer/headercontainer'
 import { CategoryBarContainer } from './containers/categorybarcontainer/categorybarcontainer'
 
@@ -10,14 +10,14 @@ import { ProductsListPage } from './components/productslistpage/finalui/products
 
 import { RegisterFormContainer } from './containers/signup&signincontainer/registerformcontainer';
 
-import { RegisterBarContainer } from './containers/signup&signincontainer/registerformcontainer';
+
 import { PersonalCenterContainer } from './containers/signup&signincontainer/personalcentercontainer';
 
 import { LoginPageContainer } from './containers/signup&signincontainer/loginpagecontainer';
 import { Route, Switch, Link } from 'react-router-dom';
 import { Footer } from './components/footer/footer';
 import { HomePageContainer } from './containers/homepagecontainer/homepagecontainer';
-import Client, {Config} from 'shopify-buy';
+
 import { ProductDetails } from './components/productdetailspage/final/final-ui';
 import { CartFinalUiContainer } from './containers/cartcontainer/cartfinaluicontainer';
 
@@ -26,7 +26,8 @@ import { EventsListContainer } from './containers/eventspagecontainer/eventslist
 import {  EventsDetailsUi } from './components/eventspage/eventsdetails/eventsdetailsui';
 import { TermOfUse } from './components/footer/termofuse/termofuse';
 import { Privacy } from './components/footer/privacy/privacy';
-import { UserFilterMobileContainer } from './containers/productslistpagecontainer/userfiltermobilecontainer'
+import { UserFilterMobileContainer } from './containers/productslistpagecontainer/userfiltermobilecontainer';
+import { NoPage } from './components/404page/404page';
 
 
 
@@ -45,16 +46,14 @@ componentWillMount() {
 
   this.props.fetchProducts();
 
-  const restoredData=JSON.parse(window.localStorage.getItem ("id"));
-  console.log(restoredData)
-  
+  const restoredData=JSON.parse(window.localStorage.getItem ("cartinfo"));
 
   if (restoredData==null){
     return;
   }
 
 
-  console.log(restoredData);
+ 
   this.props.fetchCheckOutProducts(restoredData);
   
 }
@@ -74,6 +73,7 @@ componentWillMount() {
         <HeaderContainer />
        
         <CategoryBarContainer />
+        <div className='appmain'>
         <Switch>
 
            
@@ -95,13 +95,10 @@ componentWillMount() {
           <Route path='/cartcheckoutfinished' component={CheckOutFinishContainer} /> 
           <Route path='/term-of-use' component={TermOfUse} />
           <Route path='/privacy' component={Privacy} />
-         <Route render={() => <div>We dont have such page, maybe you are interested in checking our 
-          <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='> products</Link></div>} />
+         <Route component={ NoPage } />
        
-        
-        
-           
         </Switch>
+        </div>
 
         <Footer />
       

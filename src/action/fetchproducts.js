@@ -1,4 +1,4 @@
-import Client, {Config} from 'shopify-buy';
+import Client from 'shopify-buy';
 const client = Client.buildClient({
     domain: 'mynewrainfun.myshopify.com',
     storefrontAccessToken: '7db4c7d5a86c66d886c96c6011440d88'

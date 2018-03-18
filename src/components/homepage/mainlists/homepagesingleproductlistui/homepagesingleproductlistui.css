@@ -34,13 +34,7 @@
 
 .homepage-single-product-container .image-container {
     height:63%; 
-    
-
-
 }
-
-
-
 .homepage-single-product-container .content-container {
 
     display: flex;
@@ -53,8 +47,7 @@
 
 .homepage-single-product-container .name{
     font-weight: 100;
-    overflow: hidden;
-    height:2.5rem;
+ 
     margin-bottom: 1rem;
     padding:.3rem;
     padding-bottom: 0;
@@ -88,16 +81,11 @@
     cursor: pointer;
     transition:.3s ease;
     color:white;
-  
     background:white;
-    
     box-shadow: 0 .1px .3px .3px lightgray 
-    
-    
-
 }
 
-.homepage-single-product-container a{
+.homepage-single-product-container .morebtn p{
     color:red;
 
 }
@@ -155,10 +143,26 @@ color: #EF5D25;
     display:none
 }
 
+.homepage-single-product-container .ipadpro-name{
+    display:none;
+}
+.homepage-single-product-container .mobile-name{
+    display:block;
+}
+
 @media only screen and (min-width:500px) {
 
     .homepage-single-product-container{
         width:30%
     }
 
+}
+
+@media only screen and (min-width:800px){
+    .homepage-single-product-container .ipadpro-name{
+        display:block;
+    }
+    .homepage-single-product-container .mobile-name{
+        display:none;
+    }
 }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { CategoryBar } from '../../components/categorybar/categorybar';
 
 
@@ -19,10 +19,11 @@ const mapDispatchToProps = (dispatch)=>{
     return {
 
         
-        changeSearchTerm:(text)=>dispatch({
+        changeSearchTerm:()=>dispatch({
 
             type:'CHANGE_SEARCHTERM',
-            text
+            text:'',
+            
         }),
         onCategoryClick:(text)=>dispatch({
 

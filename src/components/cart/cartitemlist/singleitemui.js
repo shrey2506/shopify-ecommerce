@@ -56,7 +56,7 @@ export const CartSingleItemUi = (props) => {
                 <div className="left-container">
                     <div>
 
-                        <div className="image" ><img src={item.imageSrc} alt="image" /></div>
+                        <div className="image" ><img src={item.imageSrc} alt="product images" /></div>
 
 
                         <div className="title"><p><strong>Title:</strong> {item.title}</p></div>

@@ -28,14 +28,9 @@
 
 .productdetailspage-single-product-container .image-container img{
     
-    
-    
-   
     max-height: 100%;
     max-width: 100%;
     
-   
-   
 }
 
 
@@ -48,16 +43,14 @@
 
 .productdetailspage-single-product-container .name {
     font-weight: 100;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  
    margin-bottom: .3rem;
   
 }
 
-.productdetailspage-single-product-container .overflow-ellipsis{
+.productdetailspage-single-product-container .ipadpro-name{
    
-   
+   display:none;
 }
 
 .productdetailspage-single-product-container .price {
@@ -91,7 +84,7 @@
 
 }
 
-.productdetailspage-single-product-container a{
+.productdetailspage-single-product-container p{
     color:red;
 
 }
@@ -168,6 +161,12 @@ color: #EF5D25;
         width:30%;
         margin-right:1rem;
         margin-bottom: 1.5rem;
+    }
+    .productdetailspage-single-product-container .ipadpro-name{
+        display:block;
+    }
+    .productdetailspage-single-product-container .mobile-name{
+        display:none;
     }
 
 }

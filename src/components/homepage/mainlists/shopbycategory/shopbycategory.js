@@ -13,7 +13,7 @@ export const ShopByCategory = (props) => {
 
 
             <div className='image-container'>
-            <img src={props.product.imageSrc} alt="image"/>
+            <img src={props.product.imageSrc} alt='products categories'/>
             </div>
 
            

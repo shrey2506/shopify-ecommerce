@@ -18,8 +18,9 @@ const initialState = {
     collectionList:'',
     checkOutId:'',
     checkOutWebUrl:'',
-    checkOutProducts:'',
+    checkOutProducts:[],
     openCheckOut:false,
+    searchTerm:'',
     events:[
         {
             title: 'Rain BBQ on next Saturday!',
@@ -99,7 +100,7 @@ return Object.assign({},state,{checkOutProducts:[...state.checkOutProducts,actio
 
         case "UPDATE_ITEM":
         return Object.assign({},state,{checkOutProducts:state.checkOutProducts.map((element)=>{
-            if (element.uniqueCheckOutNumber==action.text.uniqueCheckOutNumber){
+            if (element.uniqueCheckOutNumber===action.text.uniqueCheckOutNumber){
                 return action.text
             }
             return element

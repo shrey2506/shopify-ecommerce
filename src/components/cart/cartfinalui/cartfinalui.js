@@ -1,11 +1,11 @@
 import React from 'react';
-import { Loading } from '../../animation/loading';
+import { Link } from 'react-router-dom'
 import { CartHeader } from '../cartheader/cart-header';
 import './cartfinalui.css';
 import { CartItemsListContainer } from '../../../containers/cartcontainer/cartitemslistcontainer';
 import { CartCheckOutUiContainer } from '../../../containers/cartcontainer/carcheckoutcontainer';
-import { CartCheckOutUi } from '../cartcheckout/cartcheckout';
-import Client, { Config } from 'shopify-buy';
+
+import Client from 'shopify-buy';
 import './cartfinalui.css';
 
 
@@ -16,10 +16,7 @@ const client = Client.buildClient({
 });
 
 export class CartFinalUi extends React.Component {
-    constructor(props) {
-        super(props)
 
-    }
 
     componentDidMount() {
 
@@ -27,9 +24,8 @@ export class CartFinalUi extends React.Component {
             return;
         }
 
-        console.log(this.props.checkOutProducts)
 
-        window.localStorage.setItem("id", JSON.stringify(this.props.checkOutProducts));
+        window.localStorage.setItem("cartinfo", JSON.stringify(this.props.checkOutProducts));
 
         const lineItemsToAdd = this.props.checkOutProducts
             .map((element) => ({
@@ -37,7 +33,7 @@ export class CartFinalUi extends React.Component {
                 quantity: element.quantity
             }));
 
-        console.log(lineItemsToAdd)
+    
 
 
         client.checkout.create().then((checkout) => {
@@ -45,8 +41,7 @@ export class CartFinalUi extends React.Component {
 
             const checkOutId = checkout.id;
             const checkOutWebUrl = checkout.webUrl
-            console.log(checkOutId)
-            console.log(checkOutWebUrl)
+          
 
             this.props.createCheckOutId(checkOutId);
             this.props.createCheckOutWebUrl(checkOutWebUrl);
@@ -59,7 +54,7 @@ export class CartFinalUi extends React.Component {
     componentWillReceiveProps(nextProps) {
         if (nextProps.checkOutProducts !== this.props.checkOutProducts) {
 
-            window.localStorage.setItem("id", JSON.stringify(nextProps.checkOutProducts));
+            window.localStorage.setItem("cartinfo", JSON.stringify(nextProps.checkOutProducts));
 
             const lineItemsToAdd = nextProps.checkOutProducts
                 .map((element) => ({
@@ -88,8 +83,10 @@ export class CartFinalUi extends React.Component {
 
     render() {
 
-        if (!this.props.checkOutProducts || this.props.checkOutProducts == '') {
-            return <div style={{ margin: '8rem' }}>There is no product under your selection. Please try again.</div>
+        if (this.props.checkOutProducts==0) {
+            return <div style={{ margin: '8rem', textAlign:'center', fontSize:'.8rem' }}><p>There is no product which has been added to your cart.</p><br/><br/>
+            <p>Check our fantastic products <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='>here</Link>!</p>
+            </div>
         }
 
         return (

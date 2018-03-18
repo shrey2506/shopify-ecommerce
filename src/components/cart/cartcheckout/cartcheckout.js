@@ -1,7 +1,7 @@
 import React from 'react';
-import { Loading } from '../../animation/loading';
+
 import { PrimaryButton } from '../.././global components/primarybutton'
-import Client, { Config } from 'shopify-buy';
+import Client from 'shopify-buy';
 import './cartcheckout.css';
 import history from '../../productslistpage/userfilter/history'
 
@@ -34,16 +34,11 @@ export const CartCheckOutUi = (props) => {
             return;
         }
 
-        const lineItemsToAdd = props.checkOutProducts
-            .map((element) => ({
-                variantId: element.id,
-                quantity: element.quantity
-            }));
+      
 
         client.checkout.create().then((checkout) => {
 
-            const checkOutId = checkout.id;
-            const checkOutWebUrl = checkout.webUrl
+    
             window.open(props.checkOutWebUrl)
 
         })

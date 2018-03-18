@@ -1,6 +1,6 @@
 import React from 'react';
 import './left-image.css';
-import { Loading } from '../../../animation/loading';
+
 
 
 export class ProductLeftImage extends React.Component {
@@ -75,9 +75,10 @@ export class ProductLeftImage extends React.Component {
                         listNumberA++;
                         return <img
                             style={this.state.currentImage == listNumberA ? stylemainimage : {}}
-                            key={listNumberA}
+                            key={element.src}
                             className="img fade"
                             src={element.src}
+                            alt='product images'
                         />
                     })}
 
@@ -90,10 +91,11 @@ export class ProductLeftImage extends React.Component {
 
                     {selectedProduct.imageSrcArray.map((element) => {
                         listNumberB++;
-                        console.log(listNumberB)
-                        return  <div><img
-                                key={listNumberB}
+                      
+                        return  <div key={element.src}><img
+                                
                                 className="img"
+                                alt='product images'
                                 src={element.src}
                                 title={listNumberB}
                                 onClick={this.onSmallImageClick}

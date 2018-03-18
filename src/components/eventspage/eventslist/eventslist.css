@@ -16,7 +16,9 @@
 }
 
 .eventslist-container {
-    padding:1.5rem;
+    margin:2rem;
+    margin-top: 1rem;
+   
 
 }
 
@@ -24,6 +26,7 @@
     font-weight: 100;
     font-size: .8rem;
     color:black;
+    padding:0;
 }
 
 @media only screen and (min-width:500px) {
@@ -59,9 +62,6 @@
         
     }
 
-    .eventslist-container .list{
-        
-    }
     
 }
 

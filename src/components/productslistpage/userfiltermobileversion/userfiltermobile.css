@@ -2,19 +2,23 @@
 
    position: absolute;
    top:0;
+   left:0;
+   right:0;
+  
+   
    padding-top:4.5rem;
    margin-bottom: 2rem;
-   
-  
    background: white;
    width:100%;
+   
 }
 
 .userfiltermobile-container-header {
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:1.5rem .3rem;
+    
+    padding:1.5rem 2rem;
     width:100%;
     background:#F7F7F7;
     position:fixed;

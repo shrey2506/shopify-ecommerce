@@ -24,7 +24,7 @@ export const EventsList =(props)=>{
 
             
 
-            {props.events.map((event)=><SingleEventUi event={event}/>)}
+            {props.events.map((event)=><SingleEventUi event={event} key={event.imageSrc}/>)}
         
         </div>
         </div>

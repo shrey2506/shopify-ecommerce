@@ -3,12 +3,12 @@ import './imageshow.css'
 import image11 from '../../../images/image11.jpg';
 import image12 from '../../../images/image12.jpg';
 import image13 from '../../../images/image13.jpg';
-import image1b from '../../../images/image1b.jpg';
+
 
 import familyactivity from '../../../images/familyactivity.png';
 
 
-import b4 from '../../../images/b4.jpeg';
+
 import {Link} from 'react-router-dom';
 
 
@@ -270,7 +270,7 @@ export class ImageShow extends Component {
                             
                         </div>
                         <div className="leftimage-container">
-                            <img src={image11} />
+                            <img src={image11} alt='product images'/>
                         </div>
                        
 
@@ -294,7 +294,7 @@ export class ImageShow extends Component {
                        
                        
                         <div className="leftimage-container">
-                                  <img src={image12} />
+                                  <img src={image12} alt='product images'/>
                            
                         </div>
                         
@@ -311,7 +311,7 @@ export class ImageShow extends Component {
                             
                         </div>
                         <div className="leftimage-container">
-                            <img src={image13} />
+                            <img src={image13} alt='product images'/>
                         </div>
 
                        
@@ -338,7 +338,7 @@ export class ImageShow extends Component {
                 <div className="imageshow-right-container">
                     
                     <div className="event"><Link to='/events/list'>
-                        <img src={familyactivity} /></Link>
+                        <img src={familyactivity} alt='family activities'/></Link>
                     </div >
                     <div><Link to='/events/list'><p style={styleimage5} className="joinbtn" > Join our fantastic FamilyFun events!</p></Link></div>
                 </div>

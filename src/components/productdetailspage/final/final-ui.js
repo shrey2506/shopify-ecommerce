@@ -16,9 +16,11 @@ export const ProductDetails = (props) =>{
     }
     
     return (
-        <div className="productdetailspage-container">
+        <div className='productdetailspage-final-container'>
+        <div className="productdetailspage-inner-container">
             <div className="left"><ProductDetailsLeftUi selectedProduct={selectedProduct}/></div>
             <div className="right"><ProductDetailsRightUiContainer selectedProduct={selectedProduct}/></div>
+        </div>
         </div>
     )
 

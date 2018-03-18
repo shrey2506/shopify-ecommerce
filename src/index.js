@@ -9,10 +9,10 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import { cyan500, red300, lightGreen100, lightGreen400, lightBlack, red400 } from 'material-ui/styles/colors';
+import { lightBlack, red400 } from 'material-ui/styles/colors';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { BrowserRouter, Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 
 import history from '../src/components/productslistpage/userfilter/history'
 

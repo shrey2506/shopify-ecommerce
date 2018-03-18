@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { HeaderSearch } from '../../components/header/header';
 
 
@@ -11,8 +11,8 @@ const mapStateToProps = (state) =>{
         sortValue:state.sortValue,
         searchTerm:state.searchTerm,
         productsList:state.productsList,
-       
-        registerForm:state.registerForm
+        registerForm:state.registerForm,
+        checkOutProducts:state.checkOutProducts
     }
 }
 

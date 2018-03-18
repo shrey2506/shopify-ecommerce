@@ -6,12 +6,8 @@ export const CategoryBar = (props) => {
 
 
     const onCategoryClick = (event) => {
-       
-        
-       
 
-        document.getElementById('clearaftercategoryclick').value="";
-
+       
     }
 
     const otherLinkStatus=

@@ -1,17 +1,27 @@
 .page-products-container {
     margin:2rem;
+    margin-top:1rem;
     position: relative;
+    z-index:99;
+   
 }
 
-
+.page-products-container .mobile-header{
+    display: flex;
+    justify-content: space-between;
+    
+}
 
 .page-products-container .filterbtn{
-    float: right;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
-    margin-top: -1.5rem;
+    cursor: pointer;
+   
+    z-index: 1099;
+    
 }
 
 .page-products-container .filterbtn i{
@@ -19,10 +29,13 @@
   
 }
 
-.page-products-container .currentposition {
+.page-products-container .current-position {
     font-weight: 100;
     font-size: .8rem;
     color:black;
+    margin:0;
+    position: relative;
+  
 }
 
 .page-products-container .headline {

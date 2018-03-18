@@ -11,6 +11,7 @@ export const LeftUiSizeTable = (props) => {
 
         <div className="leftuisizetable-container">
             <table>
+                <tbody>
                 <tr>
                     <th>Id</th>
                     <th>Size</th>
@@ -20,15 +21,16 @@ export const LeftUiSizeTable = (props) => {
                     listNumber++;
                     return (
 
-                    <tr>
-                        <td>{listNumber}</td>
-                        <td>{variant.title}</td>
-                        <td>NZD{variant.price}</td>
+                    <tr key={listNumber+100}>
+                        <td key={listNumber}>{listNumber}</td>
+                        <td key={variant.title}>{variant.title}</td>
+                        <td key={variant.price}> NZD{variant.price}</td>
                     </tr>
                     )
                 }
             
             )}
+            </tbody>
             </table>
         </div>
 

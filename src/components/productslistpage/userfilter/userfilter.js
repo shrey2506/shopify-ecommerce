@@ -2,9 +2,7 @@ import React from 'react';
 import './userfilter.css';
 
 import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
-import { Route, Link, withRouter, Router } from 'react-router-dom';
+
 import history from './history'
 
 
@@ -40,21 +38,17 @@ export class UserFilter extends React.Component {
         history.push(`/products/list/category=${this.props.currentCategory}&price=${this.props.filterPrice}&shipping=${value}&sortValue=${this.props.sortValue}&searchTerm=${this.props.searchTerm}`)
         
          
-
-
     }
 
     handleCategoryClick(event, value) {
 
-        const otherLinkStatus=`&price=${this.props.filterPrice}&shipping=${this.props.filterShipping}&sortValue=${this.props.sortValue}&searchTerm=`
+        const otherLinkStatus=`&price=${this.props.filterPrice}&shipping=${this.props.filterShipping}&sortValue=${this.props.sortValue}&searchTerm=${this.props.searchTerm}`
     
 
         
         this.props.onCategoryChange(value);
         history.push(`/products/list/category=${value}${otherLinkStatus}`);
-        this.setState((prevState, newProps)=>{
-            currentCategory:value
-        })
+       
         
     }
     

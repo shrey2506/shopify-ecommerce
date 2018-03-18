@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { PersonalCenter } from '../../components/signin&signup/personalcenter';
 
 
 const mapStateToProps = (state) =>{
     return {
         accountName:state.login.loginInfo.account,
-        city:state.login.loginInfo.city,
-        address:state.login.loginInfo.address,
         password:state.login.loginInfo.password,
-        loginStatus:state.login.loginStatus
+        loginStatus:state.login.loginStatus,
+        checkOutProducts:state.checkOutProducts,
+
         
     }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import './loginpage.css';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import history from '../../components/productslistpage/userfilter/history'
 
 export class LoginPage extends React.Component {
 
@@ -77,6 +78,7 @@ export class LoginPage extends React.Component {
         console.log(val)
     }
 
+
     handleLoginSubmit(){
 
         this.handleEmailBlur();
@@ -115,23 +117,11 @@ export class LoginPage extends React.Component {
             loginStatus:true,
             loginInfo:check
         }
-
+        history.push('/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=')
         this.props.handleLoginSubmit(login)
-
-
-        
-        
+       
 
     }
-
-   
-
-    
-
-
-
-
-
 
     render(){
         return (
@@ -148,8 +138,10 @@ export class LoginPage extends React.Component {
                 floatingLabelText="Please insert your valid email"
                 onBlur={this.handleEmailBlur.bind(this)}
                 errorText={this.state.loginEmail.errorText}
+                
                 id="loginEmail"
-                errorText={this.state.loginEmail.errorText}
+                
+                
                 
             /><br />
 
@@ -162,6 +154,7 @@ export class LoginPage extends React.Component {
                 errorText={this.state.loginPassword.errorText}
                 onBlur={this.handlePasswordBlur.bind(this)}
                 id="loginPassword"
+               
 
             /><br />
        

@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
 import './cart-header.css';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const CartHeader =(props)=>{
 
@@ -17,9 +17,3 @@ export const CartHeader =(props)=>{
     )
 }
 
-CartHeader.propTypes={
-    requiredFunc:PropTypes.func.isRequired,
-
-
-
-}

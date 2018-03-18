@@ -2,9 +2,10 @@ import React from 'react';
 
 import './selectproductslist.css';
 import { Loading } from '../../../animation/loading';
-import { Switch, Route } from 'react-router-dom';
+import { NoResultPage } from './noresultpage';
 
-import { SingleProductUnderList } from './singleproduct'
+
+import { ProductsListPageSingleProductUnderList } from './productslistpagesingleproduct'
 
 
 
@@ -16,29 +17,33 @@ export class SelectProductsList extends React.Component{
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.props.changeCurrentCategory(nextProps.currentCategory);
+        this.props.changeFilterPrice(nextProps.filterPrice);
+        this.props.changeFilterShipping(nextProps.filterShipping);
+        this.props.changeSearchTerm(nextProps.searchTerm);
+        window.scrollTo(0,0)
+        console.log(this.render.afterCategoryList)
+    }
+
     componentDidMount() {
-     
-
-        this.props.changeCurrentCategory(this.props.currentCategory);
-        this.props.changeFilterPrice(this.props.filterPrice);
-        this.props.changeFilterShipping(this.props.filterShipping);
-        this.props.changeSearchTerm(this.props.searchTerm);
-
-        window.scrollTo(0,0)
-
-
-    }
-
-    componentDidUpdate(){
-        
-        
-
         this.props.changeCurrentCategory(this.props.currentCategory);
         this.props.changeFilterPrice(this.props.filterPrice);
         this.props.changeFilterShipping(this.props.filterShipping);
         this.props.changeSearchTerm(this.props.searchTerm);
         window.scrollTo(0,0)
+        console.log(this.render.afterCategoryList)
     }
+
+    componentWillUnmount(){
+    
+        this.props.changeSearchTerm('');
+        this.props.changeCurrentCategory('')
+    }
+
+   
+  
+
     
 
     
@@ -57,31 +62,31 @@ export class SelectProductsList extends React.Component{
     const afterFilterPriceList = () =>{
         
        
-        if (props.filterPrice=="All") {
-            console.log(productsList)
+        if (props.filterPrice==="All") {
+           
             
             return productsList;
         }
 
-        if (props.filterPrice=="under NZD10"){
+        if (props.filterPrice==="under NZD10"){
             return productsList.filter((element)=>10>element.variants[0].price)
         }
         
-        if (props.filterPrice=="NZD10 - NZD20"){
+        if (props.filterPrice==="NZD10 - NZD20"){
             return productsList.filter((element)=>20>=element.variants[0].price&&element.variants[0].price>=10)
         }
 
-        if (props.filterPrice=="over NZD20"){
+        if (props.filterPrice==="over NZD20"){
             return productsList.filter((element)=>element.variants[0].price>20)
         }
     }
     const afterFilterShippingList = () =>{
 
-        console.log(afterFilterPriceList())
+       
 
-        if (props.filterShipping=="All") {            
+        if (props.filterShipping==="All") {            
             return afterFilterPriceList();
-            console.log(afterFilterPriceList())
+           
             
         }
         if (props.filterShipping==1){
@@ -105,7 +110,7 @@ export class SelectProductsList extends React.Component{
     }
 
     const afterSearchList = () => {
-        console.log(afterFilterShippingList())
+        
         
         const checkAgainstArray = (element) =>{
             
@@ -116,7 +121,7 @@ export class SelectProductsList extends React.Component{
 
         const searchTermArray = props.searchTerm.toLowerCase().split(" ")
 
-        if (props.searchTerm == '') {
+        if (props.searchTerm === '') {
             
             return afterFilterShippingList();
             
@@ -128,11 +133,9 @@ export class SelectProductsList extends React.Component{
 
 
     const afterCategoryList = () =>{
-        if (props.currentCategory=="All"){
+        if (props.currentCategory==="All"){
             return afterSearchList();
         }
-
-     
         return afterSearchList().filter((element)=>element.category==props.currentCategory)
        
 
@@ -142,7 +145,7 @@ export class SelectProductsList extends React.Component{
         
         if (props.sortValue==1){
             return afterCategoryList()
-            console.log(afterCategoryList())
+           
         }
       
         if (props.sortValue==3){
@@ -160,25 +163,21 @@ if (!props.productsList[0]) {
     return <Loading />
 }
 
-if (afterSortList()==undefined) {
-    console.log(afterCategoryList())
-    console.log(afterFilterPriceList())
-    return <div>We cant find the result you need, pleaes try again!</div>
+
+
+if (afterSortList().length==0||afterSortList()==null) {
+    
+    return <NoResultPage />
 }
 
     
-if (!props.productsList[0]) {
-    return <Loading />
-}
-
-
  return (
 
         <div className="selectproductslist">
        
       
       {afterSortList().map((product)=>
-<SingleProductUnderList product={product} key={product.id}/>)}
+<ProductsListPageSingleProductUnderList product={product} key={product.id}/>)}
 
         </div>
     )

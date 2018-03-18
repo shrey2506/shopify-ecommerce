@@ -5,7 +5,7 @@ import { RightSelectQuantityUi } from '../right-select-quantity-ui/right-select-
 import { RightShippingPolicyUi } from '../right-shipping-policy-ui/right-shipping-policy-ui';
 import { PrimaryButton } from '../../../global components/primarybutton';
 import './right-final-ui.css';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {  LeftUiSizeTable } from '../../leftpart/left-sizetable/left-ui-sizetable'
 
 

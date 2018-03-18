@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { RegisterBar } from '../../components/signin&signup/registerbar';
 
 

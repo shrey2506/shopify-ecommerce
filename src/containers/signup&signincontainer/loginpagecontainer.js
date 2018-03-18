@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import React from 'react';
+
 import { LoginPage } from '../../components/signin&signup/loginpage';
 
 

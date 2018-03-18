@@ -34,7 +34,7 @@ export const RightSelectSizeUi = (props) => {
             >
 
             {props.selectedProduct.variants.map((variant)=>{
-                return <MenuItem value={variant.id} title={variant.id} primaryText={`${variant.title} --- NZD${variant.price}`} />
+                return <MenuItem value={variant.id} key={variant.id} title={variant.id} primaryText={`${variant.title} --- NZD${variant.price}`} />
             })}
 
                 

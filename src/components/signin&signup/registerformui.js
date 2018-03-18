@@ -5,15 +5,18 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 export const RegisterFormUi = (props)=>{
 
+
+
 return (
     <div className="pageone-container">
-    <div >
+    <div>
 
             <TextField
                 hintText="Email"
                 floatingLabelText="Please insert your valid email"
                 onBlur={props.handleEmailBlur}
                 errorText={props.emailErrorText}
+                
                 id="Email"
             /><br />
 
@@ -25,6 +28,7 @@ return (
                 type="password"
                 errorText={props.passwordErrorText}
                 onBlur={props.handlePasswordBlur}
+            
                 id="Password"
             /><br />
 
@@ -33,6 +37,7 @@ return (
                 floatingLabelText="Repeat Password"
                 type="password"
                 errorText={props.confirmPasswordErrorText}
+             
                 onBlur={props.handlePasswordConfirmBlur}
                 id="ConfirmPassword"
             /><br />

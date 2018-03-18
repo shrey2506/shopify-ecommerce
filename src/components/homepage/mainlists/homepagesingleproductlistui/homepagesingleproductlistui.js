@@ -1,9 +1,9 @@
 import React from 'react';
-import './singleproductlistui.css';
+import './homepagesingleproductlistui.css';
 
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-export class SingleProductListUi extends React.Component {
+export class HomepageSingleProductListUi extends React.Component {
 
     constructor(props) {
         super(props);
@@ -14,22 +14,40 @@ export class SingleProductListUi extends React.Component {
 
     render() {
 
+        const title=this.props.product.title
+
+        const limitedTitleIpadPro=()=>{
+            if (title.split(' ').length>10){
+                return title.split(' ').slice(0,12).join(' ')+' ...'
+            }
+            return title;
+        }
+     
+        const limitedTitleMobile=()=>{
+            if (title.split(' ').length>5){
+                return title.split(' ').slice(0,4).join(' ')+' ...'
+            }
+            return title;
+        }
+
         return (
 
             <div className='homepage-single-product-container'>
 
          
                 <div className='image-container'>
-                    <img className="img" src={this.props.product.imageSrc} alt="image" />
+                    <img className="img" src={this.props.product.imageSrc} alt="product images" />
                 </div>
 
                 <div className='content-container'>
 
                     <div className='name'>
-                        <p>{this.props.product.title}</p>
+                        
+                        <div className='ipadpro-name'>{limitedTitleIpadPro()}</div>
+                        
+                        <div className='mobile-name'>{limitedTitleMobile()}</div>
                     </div>
 
-                 
 
                     <div className='price'>
                         <p>NZD{this.props.product.variants[0].price}</p>
@@ -39,7 +57,7 @@ export class SingleProductListUi extends React.Component {
 
 
                 <Link to={`/products/productsdetails/${this.props.product.id}`}><div className={this.state.hoverOn?"displaynone":"morebtn"} >
-                    <a >more ></a>
+                    <p>more ></p>
                 </div></Link>
                
 

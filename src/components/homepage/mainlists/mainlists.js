@@ -3,8 +3,8 @@ import './mainlists.css';
 
 
 import { ShopByCategory } from './shopbycategory/shopbycategory';
-import { SingleProductListUi } from './singleproductlistui/singleproductlistui';
-import { NavLink, Route } from 'react-router-dom';
+import { HomepageSingleProductListUi } from './homepagesingleproductlistui/homepagesingleproductlistui';
+import { NavLink } from 'react-router-dom';
 import { Loading } from '../../animation/loading';
 import { SingleEventUi } from '../../eventspage/eventslist/singleeventui'
 
@@ -29,7 +29,7 @@ export class MainLists extends React.Component {
 
         <div className="shopbycategory">
 
-          {this.props.collectionList.map((element) => <ShopByCategory product={element} key={element.id} />)}
+          {this.props.collectionList.map((element) => <ShopByCategory product={element} key={element.imageSrc} />)}
 
         </div>
 
@@ -38,7 +38,7 @@ export class MainLists extends React.Component {
         </div>
 
          <div className="popular-product-list">
-          {popularList.map(element => <SingleProductListUi product={element} key={element.id} />)}
+          {popularList.map(element => <HomepageSingleProductListUi product={element} key={element.id} />)}
 
         </div>
 
