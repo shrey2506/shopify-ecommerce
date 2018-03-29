@@ -1,9 +1,15 @@
 .registerform-container {
-    margin: 2rem 0;
-    margin-bottom: 4rem;
+    margin: 3rem auto;
+   
 
 }
 
+
+.registerform-container .warning{
+    color:red;
+    
+    text-align: center;
+}
 
 
 .active{

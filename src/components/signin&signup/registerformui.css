@@ -4,9 +4,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
+    
 }
+
+
 
 .final-wrapper .active{
     display:block;
@@ -14,4 +15,8 @@
 
 .final-wrapper .inactive{
     display:none;
+}
+
+.pageone-container .accountexisting {
+    margin-top:1rem;
 }

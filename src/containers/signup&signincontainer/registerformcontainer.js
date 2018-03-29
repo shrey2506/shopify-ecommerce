@@ -18,8 +18,6 @@ const mapDispatchToProps = (dispatch)=>{
             type:'CHANGE_LOGIN',
             text
         }),
-
-
     }
 }
 

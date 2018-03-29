@@ -1,5 +1,7 @@
 import React from 'react';
 import './registerform.css';
+import { auth } from '../../firebase/index';
+import { Loading } from '../../components/animation/loading';
 
 import { RegisterFormUi } from './registerformui';
 
@@ -25,15 +27,14 @@ export class RegisterForm extends React.Component {
                 errorText: '',
                 value: ''
             },
-          
-
+            error:'',
+            loading:false
         }
-       
     }
-
 
     handleEmailBlur() {
         const val = document.getElementById('Email').value;
+        this.setState({error:''})
        
         if (val === "") {
 
@@ -59,6 +60,7 @@ export class RegisterForm extends React.Component {
     handlePasswordBlur(event) {
 
         const val = document.getElementById('Password').value;
+        this.setState({error:''})
 
         if (val === '') {
 
@@ -78,16 +80,13 @@ export class RegisterForm extends React.Component {
         this.setState({
             password: { status: true, value: val }
         })
-        console.log(val)
+
+        
     }
 
-
-
-
-
-
     handlePasswordConfirmBlur() {
-        const val = document.getElementById('ConfirmPassword').value
+        const val = document.getElementById('ConfirmPassword').value;
+        this.setState({error:''})
 
         if (val === '') {
             this.setState({
@@ -120,9 +119,8 @@ export class RegisterForm extends React.Component {
 
     }
 
-    
-
     handlePageOneNextClick(event) {
+        this.setState({error:''})
 
         this.handleEmailBlur();
         this.handlePasswordBlur();
@@ -130,24 +128,41 @@ export class RegisterForm extends React.Component {
        
         
         if (this.state.email.status && this.state.password.status && this.state.confirmPassword.status) {
-
+ 
+           this.setState({loading:true})
+            const email=this.state.email.value;
+ const password=this.state.password.value;
             const regInfo = {
                 loginStatus: true,
                 loginInfo: {
                     account: this.state.email.value,
-                   
                     password:this.state.password.value
                 }
             }
     
-            this.props.handleFinalRegisterSubmit(regInfo);
-            
-            
-            if(this.props.openCheckOut){
-                window.open(this.props.checkOutWebUrl);
-                return;
+            auth.doCreateUserWithEmailAndPassword(email, password)
+            .then(authUser => {
+
+                this.setState({loading:false})
+
+                console.log(authUser)
+
+                if(authUser.email){
+                this.props.handleFinalRegisterSubmit(regInfo);
+                if(this.props.openCheckOut){
+                    window.open(this.props.checkOutWebUrl);
+     
+                }
+                history.push('/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=')
+    
             }
-            history.push('/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=')
+            })
+            .catch(error=>{
+                this.setState({loading:false})
+                console.log(error);
+                this.setState({error:error.message})
+
+            })
 
 
         }
@@ -156,11 +171,17 @@ export class RegisterForm extends React.Component {
 
     render() {
 
+        if (this.state.loading){
+            return <Loading info="Registering now!"/>
+        }
+
         return (
 
             <div className="registerform-container">
 
                 <div>
+
+                    <div className='warning'>{this.state.error}</div>
 
                     <RegisterFormUi
                         handleEmailBlur={this.handleEmailBlur.bind(this)}
@@ -171,6 +192,8 @@ export class RegisterForm extends React.Component {
 
                         confirmPasswordErrorText={this.state.confirmPassword.errorText}
                         handlePasswordConfirmBlur={this.handlePasswordConfirmBlur.bind(this)}
+
+                        
 
                         handleNextClick={this.handlePageOneNextClick.bind(this)}
                         

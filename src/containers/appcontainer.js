@@ -21,7 +21,8 @@ const mapStateToProps =(state)=> {
         checkOutId:state.checkOutId,
         openCheckOut:state.openCheckOut,
         events:state.events,
-        currentCategory:state.currentCategory
+        currentCategory:state.currentCategory,
+        login:state.login,
 
 
     }
@@ -36,7 +37,11 @@ const mapDispatchToProps = (dispatch) => {
             type:"RESTORE_CART",
             text
 
-        })
+        }),
+        handleUserReload:(text)=>dispatch({
+            type:'CHANGE_LOGIN',
+            text
+        }),
            
     }
 }

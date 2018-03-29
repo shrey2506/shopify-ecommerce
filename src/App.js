@@ -28,6 +28,9 @@ import { TermOfUse } from './components/footer/termofuse/termofuse';
 import { Privacy } from './components/footer/privacy/privacy';
 import { UserFilterMobileContainer } from './containers/productslistpagecontainer/userfiltermobilecontainer';
 import { NoPage } from './components/404page/404page';
+import { ResetPassword } from './components/signin&signup/resetpassword';
+import { ChangePassword } from './components/signin&signup/changepassword';
+import { firebase } from './firebase/index';
 
 
 
@@ -41,7 +44,6 @@ class App extends Component {
   }
 
 
-
 componentWillMount() {
 
   this.props.fetchProducts();
@@ -52,23 +54,32 @@ componentWillMount() {
     return;
   }
 
-
- 
   this.props.fetchCheckOutProducts(restoredData);
   
 }
 
-
-
+componentDidMount(){
+  console.log(this.props.login.loginStatus)
+  firebase.auth.onAuthStateChanged((authuser)=>{
+    if(authuser){
+      const userInfo={
+        loginStatus:true,
+        loginInfo:{
+          account:authuser.email,
+        }
+      }
+      this.props.handleUserReload(userInfo)
+    }
+    if(!authuser){
+      return
+    }
+  })
+}
 
   render() {
     return (
 
-      
-
-      
       <div className="App">
-
 
         <HeaderContainer />
        
@@ -91,6 +102,11 @@ componentWillMount() {
           <Route path='/personalcenter' component={PersonalCenterContainer} />
           <Route path='/signin' component={LoginPageContainer} />
           <Route path='/register' component={RegisterFormContainer} />
+          <Route path='/resetpassword' component={ResetPassword} />
+          <Route path='/changepassword' render={(props)=><ChangePassword {...props} login={this.props.login} />} />
+
+
+
           <Route path='/cart' component={CartFinalUiContainer}/>
           <Route path='/cartcheckoutfinished' component={CheckOutFinishContainer} /> 
           <Route path='/term-of-use' component={TermOfUse} />

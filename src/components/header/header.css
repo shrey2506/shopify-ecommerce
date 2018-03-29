@@ -2,10 +2,16 @@
     display:flex;
     width:100%;
     justify-content: space-around;
-    padding-top:1rem;
-    padding-bottom: 1rem;
+    padding:1rem, 0rem;
+ 
     align-items: center;
+
     
+}
+
+.header-mobile .logo-cart {
+    justify-content: space-between;
+    padding: 1rem .75rem;
 }
 
 
@@ -14,9 +20,11 @@
     display:flex;
     align-items: center;
    
-    width:50%
+    width:50%;
+
 
 }
+
 
 .header-ipadpro .header-search-ipadpro {
     display:flex;
@@ -65,13 +73,24 @@
 }
 
 
-.header-ipadpro .header-h2, .header-mobile .header-h2{
-    
+.header-ipadpro .header-h2 {
+
     margin-right:2.22rem;
     margin-left:1.22rem;
     font-family: Poppins, sans-serif;
     font-size: 1.8rem;
     color: #EF5D25;
+
+}
+
+.header-mobile .header-h2{
+    
+    margin-right:2.22rem;
+    
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+    color: #EF5D25;
+    border:1px solid red;
 
 }
 
@@ -149,15 +168,12 @@
     color:rgb(2, 2, 46)
 }
 
-.header-search-mobile
+
 
 .header-search-ipad{
    display:none;
 
 }
-
-
-
 
 
 .header-btns-mobile {
