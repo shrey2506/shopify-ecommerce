@@ -12,6 +12,7 @@ export const NoPage=()=>{
             <img src={notfound} alt='Sorry, we dont have this page.'/>
             </div>
             <div className='info'>
+            
                 <p>Sorry, we dont have this page.</p>
                 <p>Welcome to further check our fantastic <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='>products</Link> and <Link to='/events/list'>events</Link>. </p>
                 <p></p>
