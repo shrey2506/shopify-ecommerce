@@ -15,7 +15,7 @@ export const Footer = () => {
 
                 <div className="left">
                     <div className='logo'>    <h2 className="header-h2">Familyfun</h2> </div>
-                    <div className="mission">We make life easier!</div>
+                    <div className="mission">Fantastic fun for our family!</div>
                 </div>
 
 

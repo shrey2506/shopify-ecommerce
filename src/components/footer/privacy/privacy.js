@@ -7,7 +7,7 @@ export const Privacy=()=>{
         <h5>Privacy</h5>
 
             <p>Detailed clauses of <em>Privacy</em>.</p>
-            
+           
         </div>
     )
 }

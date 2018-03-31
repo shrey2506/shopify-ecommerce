@@ -158,7 +158,7 @@ export class HeaderSearch extends React.Component {
 
                     <div className="header-btns-mobile">
 
-                        <div>
+                        <div className='products-events'>
 
                             <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='
                                 onClick={this.onMenuClick}

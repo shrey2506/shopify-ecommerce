@@ -16,8 +16,6 @@ input:focus {
 
 
 
-
-
 .image-container img {
   width: 100%;
 }
@@ -26,11 +24,11 @@ input:focus {
 
 .App {
   font-family: 'Work Sans', sans-serif;
+  margin:0 1.5rem;
+  
 }
 
-.appmain {
-  padding:1rem;
-}
+
 
 
 

@@ -1,10 +1,10 @@
 .registerbar-container {
    
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width:100%;
     align-items: center;
-    
+  
     
 }
 
@@ -51,3 +51,22 @@
     font-size: 24px;
     margin-top:.299rem;
  }
+
+ @media only screen and (max-width:365px){
+
+    .registerbar-container a {
+    
+  
+        margin: .4rem;
+        
+        
+    }
+
+    .registerbar-container .login-signin {
+    
+    
+        padding: .17rem .9rem;
+     
+    
+    }
+}

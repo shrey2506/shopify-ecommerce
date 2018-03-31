@@ -1,17 +1,22 @@
+.header-final-container {
+    margin:1rem 0;
+
+ 
+    
+}
+
 .header-ipadpro, .header-mobile .logo-cart {
     display:flex;
     width:100%;
     justify-content: space-around;
     padding:1rem, 0rem;
- 
     align-items: center;
-
     
 }
 
 .header-mobile .logo-cart {
     justify-content: space-between;
-    padding: 1rem .75rem;
+    padding: 1rem 0;
 }
 
 
@@ -19,10 +24,7 @@
 .header-ipadpro .header-left, .header-mobile .header-left{
     display:flex;
     align-items: center;
-   
     width:50%;
-
-
 }
 
 
@@ -35,7 +37,7 @@
 
 .header-input{
    
-    padding: .47rem 1rem;
+    padding: .47rem 0;
     font-size: .77rem;
     
     box-sizing: border-box;
@@ -60,7 +62,7 @@
 
 .header-button {
     
-    padding: .55rem .8rem;
+    padding: .55rem 0;
     font-size: .77rem;
     outline:none;
     border:none;
@@ -76,7 +78,7 @@
 .header-ipadpro .header-h2 {
 
     margin-right:2.22rem;
-    margin-left:1.22rem;
+    
     font-family: Poppins, sans-serif;
     font-size: 1.8rem;
     color: #EF5D25;
@@ -90,7 +92,7 @@
     font-family: Poppins, sans-serif;
     font-size: 1.8rem;
     color: #EF5D25;
-    border:1px solid red;
+
 
 }
 
@@ -107,16 +109,18 @@
 }
 
 
-.header-ipadpro .header-right, .header-mobile .header-right {
+.header-ipadpro .header-right {
    
     display: flex;
     justify-content: flex-end;
     width:50%;
     align-items: center;
     
-    margin-right:1.5rem;
-    
 }
+
+
+
+
 
 .header-ipadpro .eventsbtn, .header-ipadpro .productsbtn {
 
@@ -136,6 +140,7 @@
     margin-left:1rem;
     border-left: 1px solid lightgrey;
     font-size: 1.1rem;
+
    
   
 }
@@ -163,6 +168,14 @@
     display:none;
 }
 
+.header-final-container .header-search-ipadpro .header-input {
+    padding-left:.5rem;
+}
+
+.header-final-container .header-search-ipad .header-input {
+    padding-left:.5rem;
+}
+
 
 .header-ipadpro .cart:hover, .header-mobile .cart:hover{
     color:rgb(2, 2, 46)
@@ -186,7 +199,7 @@
     margin: .8rem;
     color:#EF5D25;
     cursor: pointer;
-    margin-right:2rem;
+    margin-right:1rem;
 }
 
 .header-btns-mobile .activebtn, .header-ipadpro .activebtn{
@@ -206,6 +219,8 @@
     justify-content: center;
     align-items: center;
     width:100%;
+    
+    
 }
 
 .header-search-mobile form {
@@ -213,20 +228,27 @@
     align-items: center;
     width:95%;
     justify-content: center;
+   
 }
 
 .header-search-mobile .header-input{
     width:90%;
+    padding-left: .5rem;
 }
 
 .header-btns-mobile {
     display:flex;
     
-    justify-content: center;
+    justify-content: space-between;
+    
     align-items: center;
     margin-bottom: 1rem;
+  
    
 }
+
+
+
 
 
 .header-ipadpro{
@@ -278,6 +300,16 @@
         display:none;
     }
 
+}
+
+
+@media only screen and (max-width:365px){
+
+    .header-btns-mobile .eventsbtn, .productsbtn{
+        margin: .4rem;
+        
+        margin-right:0.5rem;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
