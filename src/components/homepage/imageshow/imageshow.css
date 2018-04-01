@@ -119,10 +119,6 @@
 
 
 
-
-
-
-
 .imageshow-left .info{
     flex:3;
     background-color:rgb(209, 146, 146);
@@ -164,6 +160,8 @@
 
 .imageshow-left .leftimage-container img{
     height:100%;
+    max-height: 100%;
+    max-width:100%;
     object-fit:contain;
     width:100%;
     border-top-right-radius: 4px;

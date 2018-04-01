@@ -6,15 +6,7 @@ import image13 from '../../../images/image13.jpg';
 
 
 import familyactivity from '../../../images/familyactivity.png';
-
-
-
 import {Link} from 'react-router-dom';
-
-
-
-
-
 
 export class ImageShow extends Component {
 

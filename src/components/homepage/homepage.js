@@ -10,7 +10,8 @@ export const HomePage =(props)=>{
     return (
         <div className="homepage-container">
         <ImageShow />
-        {props.productsList[0]?<MainListsContainer />:<Loading />}
+        <MainListsContainer />
+        
         </div>
     )
 
