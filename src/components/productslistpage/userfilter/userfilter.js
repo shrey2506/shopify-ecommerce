@@ -42,10 +42,8 @@ export class UserFilter extends React.Component {
 
     handleCategoryClick(event, value) {
 
-        const otherLinkStatus=`&price=${this.props.filterPrice}&shipping=${this.props.filterShipping}&sortValue=${this.props.sortValue}&searchTerm=${this.props.searchTerm}`
-    
-
-        
+        const otherLinkStatus=`&price=${this.props.filterPrice}&shipping=${this.props.filterShipping}&sortValue=${this.props.sortValue}&searchTerm=`
+       
         this.props.onCategoryChange(value);
         history.push(`/products/list/category=${value}${otherLinkStatus}`);
        

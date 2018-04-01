@@ -38,6 +38,7 @@
     text-align: right;  
     display: flex;
     flex-direction: column;
+    padding:0 .5rem;
 }
 
 .productdetailspage-single-product-container .name {
