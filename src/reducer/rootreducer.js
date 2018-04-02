@@ -23,29 +23,29 @@ const initialState = {
     searchTerm:'',
     events:[
         {
-            title: 'Rain BBQ on next Saturday!',
+            title: 'Rain BBQ at Waiheke Vineyard!',
             imageSrc: 'https://gallery.mailchimp.com/59f3454a441e4fb18052927ef/images/3c375cb5-26a4-48d0-b356-044acc8f821e.jpeg',
-            date: '2018-04-01',
+            date: '2018-04',
             brief: 'This covers your meat, rub, fuel, and classroom time. Make sure to bring a chilly bin to take home your BBQ. ​ There are only 16 spots available for each class! Come join us for an afternoon of learning and smoking, rain or shine.',
-            content:'<div>Detailed content of the Event: <strong>Rain BBQ on next Saturday!</strong></div>'
+            content:'<div> <strong>Rain BBQ at Waiheke Vineyard!</strong> Detailed content of the event will be availabel soon.</div>'
         },
 
         {
 
-            title: 'Garden Party on next Monday!',
+            title: 'Garden Party at West Spring!',
             imageSrc: 'https://gallery.mailchimp.com/59f3454a441e4fb18052927ef/images/08b0dfb9-6b18-43ae-9ccc-6a743d38a76d.jpeg',
-            date: '2018-04-04',
+            date: '2018-05',
             brief: 'You are invited to enjoy a lovely afternoon at the Tauranga Historical Society’s annual Vintage Garden Party in the lovely garden of the Brain Watkins House Museum on the corner of Cameron Road and Elizabeth Street.',
-            content:'<div>Detailed content of the Event: <strong>Garden Party on next Monday!</strong></div>'
+            content:'<div><strong>Garden Party at West Spring!</strong> Detailed content of the event will be availabel soon.</div>'
 
         },
         {
 
-            title: 'Family competition games on next Thursday!',
+            title: 'Family competition games at Victoria Park!',
             imageSrc: 'https://gallery.mailchimp.com/59f3454a441e4fb18052927ef/images/06ebe26a-b06b-4dcd-8f49-c23795bfee43.jpeg',
-            date: '2018-04-08',
+            date: '2018-06',
             brief: 'Minute to Win It Games are perfect for your next outdoor summer block party, family reunion, or backyard bash! Great for all ...',
-            content:'<div>Detailed content of the Event: <strong>Family competition games on next Thursday!</strong></div>'
+            content:'<div><strong>Family competition games at Victoria Park!</strong> Detailed content of the event will be availabel soon. </div>'
         },
 
     ],
@@ -114,9 +114,6 @@ return Object.assign({},state,{checkOutProducts:[...state.checkOutProducts,actio
 
         case "OPEN_CHECKOUT":
         return Object.assign({},state,{openCheckOut:true})
-
-
-
         default:
         return state
     

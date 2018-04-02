@@ -5,7 +5,10 @@
     position:relative;
     margin-bottom: 3rem;
     
-    grid-gap: 1rem
+    grid-gap: 1rem;
+ 
+    border-radius: 3px;
+
  
 }
 

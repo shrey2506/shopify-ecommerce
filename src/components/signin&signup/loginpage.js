@@ -26,74 +26,28 @@ export class LoginPage extends React.Component {
                 },
                 loginResult: 'unchecked',
                 loading: false,
+                updateRequest:false,
 
             }
+       this.handleLoginSubmitByKeyBoard=this.handleLoginSubmitByKeyBoard.bind(this)
     }
 
+    componentDidUpdate(){
 
-    handleEmailBlur() {
-        const val = document.getElementById("loginEmail").value;
-        console.log(val);
-
-        if (val == "") {
-
-            this.setState({
-                loginEmail: { status: false, errorText: "required" }
-            })
+        if (!this.state.updateRequest){
             return
         }
-
-        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)) {
-            this.setState({
-                loginEmail: { status: false, errorText: "please insert valid email!" }
-            })
-            return
-
-        }
-        this.setState({
-            loginEmail: { status: true, value: val }
-
-        })
-        console.log(this.state.loginEmail)
-    }
-
-
-    handlePasswordBlur() {
-
-        const val = document.getElementById("loginPassword").value;
-        console.log(val);
-
-        if (val == "") {
-
-            this.setState({
-                loginPassword: { status: false, errorText: "required" }
-            })
-            return
-        }
-        if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(val)) {
-            this.setState({
-                loginPassword: { status: false, errorText: "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" }
-            })
-            return
-        }
-        this.setState({
-            loginPassword: { status: true, value: val }
-        })
-        console.log(val)
-    }
-
-
-    handleLoginSubmit() {
 
         const email = this.state.loginEmail.value;
         const password = this.state.loginPassword.value;
 
-        this.handleEmailBlur();
-        this.handlePasswordBlur();
-
         if (this.state.loginEmail.status == false || this.state.loginPassword.status == false) {
 
+            this.setState({
+                updateRequest:false,
+            })
             return
+
         }
 
         this.setState({
@@ -113,12 +67,10 @@ export class LoginPage extends React.Component {
                     }
                 }
 
-
-                console.log('hi');
                 this.props.handleLoginSubmit(regInfo);
                 if (this.props.openCheckOut) {
                     window.open(this.props.checkOutWebUrl);
-                    return;
+                    
                 }
                 history.push('/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=');
                 this.setState({
@@ -126,7 +78,7 @@ export class LoginPage extends React.Component {
                 })
             })
             .catch(error => {
-                console.log(error)
+             
 
                 this.setState({
 
@@ -148,13 +100,115 @@ export class LoginPage extends React.Component {
                 })
                 return
             });
+            this.setState({
+                updateRequest:false,
+            })
+        
+
+
+    }
+
+
+    handleEmailBlur() {
+        //const val = document.getElementById("loginEmail").value;
+       const val=this.state.loginEmail.value;
+
+        if (val == "") {
+
+            this.setState({
+                loginEmail: { status: false, errorText: "required" }
+            })
+            return
+        }
+
+        if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)) {
+            this.setState({
+                loginEmail: { status: false, errorText: "please insert valid email!" }
+            })
+            return
+
+        }
+        this.setState({
+            loginEmail: { status: true, value: val }
+
+        })
+        
+    }
+
+
+    handlePasswordBlur() {
+
+        //const val = document.getElementById("loginPassword").value;
+        const val=this.state.loginPassword.value;
+
+        if (val == "") {
+
+            this.setState({
+                loginPassword: { status: false, errorText: "required" }
+            })
+            return
+        }
+        if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(val)) {
+            this.setState({
+                loginPassword: { status: false, errorText: "Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" }
+            })
+            return
+        }
+        this.setState({
+            loginPassword: { status: true, value: val }
+        })
+
+    }
+
+    handleEmailInput(event){
+        this.setState({
+            loginEmail: {
+                status: '',
+                errorText: '',
+                value: event.target.value,
+            }
+        })
+        
+    }
+
+    handlePasswordInput(event){
+
+        this.setState({
+            loginPassword: {
+                status: '',
+                errorText: '',
+                value: event.target.value,
+
+            }
+        })
+        
+    }
+
+    handleLoginSubmitByKeyBoard(event){
+       
+        if (event.keyCode==13){
+            this.handleLoginSubmit()
+        }
+        return;
+    }
+
+    handleLoginSubmit() {
+
+        const email = this.state.loginEmail.value;
+        const password = this.state.loginPassword.value;
+
+        this.handleEmailBlur();
+        this.handlePasswordBlur();
+        this.setState({
+            updateRequest:true,
+        })
 
     }
 
     render() {
 
         if (this.state.loading){
-            return <Loading info='just one more moment...'/>
+            return <Loading info='Just one more moment...'/>
         }
 
 
@@ -181,6 +235,8 @@ export class LoginPage extends React.Component {
                         floatingLabelText="Please insert your valid email"
                         onBlur={this.handleEmailBlur.bind(this)}
                         errorText={this.state.loginEmail.errorText}
+                        onKeyUp={this.handleLoginSubmitByKeyBoard}
+                        onChange={this.handleEmailInput.bind(this)}
 
                         id="loginEmail"
 
@@ -196,6 +252,8 @@ export class LoginPage extends React.Component {
                         type="password"
                         errorText={this.state.loginPassword.errorText}
                         onBlur={this.handlePasswordBlur.bind(this)}
+                        onKeyUp={this.handleLoginSubmitByKeyBoard}
+                        onChange={this.handlePasswordInput.bind(this)}
                         id="loginPassword"
 
 
@@ -227,3 +285,6 @@ export class LoginPage extends React.Component {
 
 
 } 
+
+
+

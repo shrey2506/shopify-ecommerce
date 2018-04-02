@@ -40,9 +40,7 @@ export class CartFinalUi extends React.Component {
 
 
             const checkOutId = checkout.id;
-            const checkOutWebUrl = checkout.webUrl
-          
-
+            const checkOutWebUrl = checkout.webUrl;
             this.props.createCheckOutId(checkOutId);
             this.props.createCheckOutWebUrl(checkOutWebUrl);
             client.checkout.addLineItems(checkOutId, lineItemsToAdd);
@@ -67,8 +65,7 @@ export class CartFinalUi extends React.Component {
 
                 const checkOutId = checkout.id;
                 const checkOutWebUrl = checkout.webUrl
-                console.log(checkOutId)
-                console.log(checkOutWebUrl)
+              
 
                 this.props.createCheckOutId(checkOutId);
                 this.props.createCheckOutWebUrl(checkOutWebUrl);

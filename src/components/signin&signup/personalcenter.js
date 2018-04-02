@@ -25,7 +25,10 @@ export const PersonalCenter =(props)=>{
 
             <p>{props.accountName}</p>
 
-             <h5>You have {itemsInCart} items in your cart. </h5>
+             <h5>Items in your cart: </h5>
+
+             <p>Total: {itemsInCart} item(s)</p>
+
 
              <div className='btn'>
 
