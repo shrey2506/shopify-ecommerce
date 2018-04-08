@@ -67,8 +67,7 @@ export class ProductDetailsRightUi extends React.Component {
             price:selectedVariant.price,
             uniqueCheckOutNumber:randomNumber
         }
-        console.log(this.props.selectedProduct)
-        console.log(selectedVariantInfo)
+       
 
         this.props.handleAddToCartClick(selectedVariantInfo);
         event.preventDefault();

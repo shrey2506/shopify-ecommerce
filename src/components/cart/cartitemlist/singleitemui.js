@@ -47,12 +47,6 @@ export const CartSingleItemUi = (props) => {
 
             <div className="singleitemui-container-main">
 
-
-
-
-
-
-
                 <div className="left-container">
                     <div>
 

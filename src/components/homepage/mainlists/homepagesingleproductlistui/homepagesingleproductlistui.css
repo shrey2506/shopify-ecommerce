@@ -98,6 +98,8 @@
 
 }
 
+
+
 .homepage-single-product-container .closebtn{
 
 
@@ -110,6 +112,8 @@ z-index:2;
 color: #EF5D25;
 
 }
+
+
 
 .homepage-single-product-container .moreinfo-details{
 
@@ -140,6 +144,7 @@ color: #EF5D25;
     .homepage-single-product-container{
         width:30%
     }
+   
 
 }
 
@@ -150,4 +155,6 @@ color: #EF5D25;
     .homepage-single-product-container .mobile-name{
         display:none;
     }
+  
+   
 }

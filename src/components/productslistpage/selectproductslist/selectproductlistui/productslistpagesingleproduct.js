@@ -36,7 +36,7 @@ export class ProductsListPageSingleProductUnderList extends React.Component {
 
          
                 <div className='image-container'>
-                    <img className="img" src={this.props.product.imageSrc} alt="products images" />
+                <Link to={`/products/productsdetails/${this.props.product.id}`}><img className="img" src={this.props.product.imageSrc} alt="products images" /></Link>
                 </div>
 
                 <div className='content-container'>
@@ -53,7 +53,7 @@ export class ProductsListPageSingleProductUnderList extends React.Component {
                 </div>
 
                 <Link to={`/products/productsdetails/${this.props.product.id}`}><div className={this.state.hoverOn?"displaynone":"morebtn"} >
-                    <p >more ></p>
+                    <p>more <span className="moreIcon"> ></span></p>
                 </div></Link>
                 
             </div>

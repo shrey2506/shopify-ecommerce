@@ -26,9 +26,8 @@
 }
 
 .singleitemui-container .right-container .removebtn{
-    margin-left: auto;
-    padding-left:.5rem;
-    
+  
+    margin-left:.5rem;
    
     color:red;
     cursor: pointer;

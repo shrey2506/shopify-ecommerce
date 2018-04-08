@@ -3,10 +3,14 @@
     justify-content: center;
     align-items: center;
     margin:4rem;
-   
 }
 
-
+.personalcenter-container > div {
+    box-shadow: 0 0 10px .5px rgb(189, 187, 187);
+    border-radius: 4px;
+    
+    padding:4rem;
+}
 
 .personalcenter-container .btn{
     display: grid;

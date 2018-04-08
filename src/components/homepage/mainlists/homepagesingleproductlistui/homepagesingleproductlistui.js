@@ -36,7 +36,7 @@ export class HomepageSingleProductListUi extends React.Component {
 
          
                 <div className='image-container'>
-                    <img className="img" src={this.props.product.imageSrc} alt="product images" />
+                <Link to={`/products/productsdetails/${this.props.product.id}`}><img className="img" src={this.props.product.imageSrc} alt="product images" /></Link>
                 </div>
 
                 <div className='content-container'>
