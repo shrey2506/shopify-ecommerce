@@ -81,7 +81,7 @@ export class CartFinalUi extends React.Component {
     render() {
 
         if (this.props.checkOutProducts==0) {
-            return <div style={{ margin: '8rem', textAlign:'center', fontSize:'.8rem' }}><p>There is no product which has been added to your cart.</p><br/><br/>
+            return <div className='cartfinalui-container-noproduct'><p>There is no product which has been added to your cart.</p><br/><br/>
             <p>Check our fantastic products <Link to='/products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm='>here</Link>!</p>
             </div>
         }

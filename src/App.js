@@ -46,8 +46,6 @@ class App extends Component {
 
 componentWillMount() {
 
-  this.props.fetchProducts();
-
   const restoredData=JSON.parse(window.localStorage.getItem ("cartinfo"));
 
   if (restoredData==null){
@@ -56,10 +54,15 @@ componentWillMount() {
 
   this.props.fetchCheckOutProducts(restoredData);
   
+
+  
 }
 
 componentDidMount(){
-  console.log(this.props.login.loginStatus)
+
+
+  this.props.fetchProducts();
+
   firebase.auth.onAuthStateChanged((authuser)=>{
     if(authuser){
       const userInfo={

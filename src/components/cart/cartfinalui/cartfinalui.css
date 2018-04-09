@@ -1,5 +1,9 @@
-.cartfinalui-container-noresult {
-    margin:3rem;
+.cartfinalui-container-noproduct {
+
+  
+    margin: 8rem 0;
+    text-align: center;
+    font-size: .8rem;
 }
 
 .cartfinalui-container{

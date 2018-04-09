@@ -25,7 +25,7 @@ export const Footer = () => {
 
 
                 <div className="right">
-                    <div className="copyright">  © 2018 Massey, Inc. </div>
+                    <div className="copyright">  © 2018 FamilyFun, Inc. </div>
                     <Link to='/term-of-use'><div className="Terms of use">Terms of use</div></Link>
                     <Link to='/privacy'><div className="Privacy">Privacy</div></Link>
                 </div>
