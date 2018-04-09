@@ -2,8 +2,10 @@ This is one Shopify ecommerce project building with Shopify Buy SDK API. No them
 
 You may visit <a href="https://help.shopify.com/api/sdks/custom-storefront/js-buy-sdk">Shopify Buy SDK Docs</a> for more details about API: Shopify Buy SDK.  
 
-Front end: React(Create React App), React Router 4, Redux 
-backend: Shopify
+Front end: React(Create React App), React Router 4, Redux;
+
+Backend: Shopify;
+
 Authentication: firebase;
 
 
