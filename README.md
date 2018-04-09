@@ -1,6 +1,6 @@
 This is one Shopify ecommerce project building with Shopify Buy SDK API. No theme is used.
 
-You may visit <a href="https://help.shopify.com/api/sdks/custom-storefront/js-buy-sdk"> for more details about API: Shopify Buy SDK.  
+You may visit <a href="https://help.shopify.com/api/sdks/custom-storefront/js-buy-sdk">Shopify Buy SDK Docs</a> for more details about API: Shopify Buy SDK.  
 
 Front end: React(Create React App), React Router 4, Redux 
 backend: Shopify
