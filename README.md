@@ -4,9 +4,16 @@ You may visit <a href="https://help.shopify.com/api/sdks/custom-storefront/js-bu
 
 Front end: React(Create React App), React Router 4, Redux;
 
-Backend: Shopify;
+Backend: Shopify, Contentful;
 
 Authentication: firebase;
+
+
+
+
+
+
+
 
 
 
