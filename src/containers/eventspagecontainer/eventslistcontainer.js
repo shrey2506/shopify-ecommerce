@@ -6,11 +6,13 @@ import { EventsList } from '../../components/eventspage/eventslist/eventslist';
 const mapStateToProps = (state) =>{
     return {
         events:state.events,
+        ...state
     }
 }
 
 const mapDispatchToProps = (dispatch)=>{
     return {
+        
 
         }
 }

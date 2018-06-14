@@ -108,7 +108,7 @@ export class MainLists extends React.Component {
           <NavLink className="active" to="products/list/category=All&price=All&shipping=All&sortValue=1&searchTerm=">See more ></NavLink>
         </div>
         
-
+<div className="eventslist-container">
         <div className="title1">
           <p>Fresh on our events</p>
         </div>
@@ -116,9 +116,11 @@ export class MainLists extends React.Component {
    
 
         <div className="events-list">
-          {this.props.events.slice(0,3).map(element => <SingleEventUi event={element} key={element.title} />)}
-        </div>
+       
 
+          {this.props.eventsList[0].title?this.props.eventsList.slice(0,3).map(element => <SingleEventUi event={element} key={element.title} />):<Loading/>}
+        </div>
+</div>
       </main>
 
     )

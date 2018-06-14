@@ -2,14 +2,14 @@ import { connect } from 'react-redux';
 
 import App from '../App';
 import { withRouter } from 'react-router-dom';
-import { fetchProducts } from '../action/fetchproducts'
+import { fetchProducts } from '../action/fetchproducts';
+import { fetchEvents } from '../action/fetchevents';
+
 
 
 const mapStateToProps =(state)=> {
     return {
 
-
-        
         term: state.term,
         location: state.location,
         sortBy: state.sortBy,
@@ -23,16 +23,17 @@ const mapStateToProps =(state)=> {
         events:state.events,
         currentCategory:state.currentCategory,
         login:state.login,
-
+        eventsList:state.eventsList,
+        
 
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
        
         fetchProducts:()=>dispatch(fetchProducts()),
+        fetchEvents:()=>dispatch(fetchEvents()),
         fetchCheckOutProducts:(text)=>dispatch({
             type:"RESTORE_CART",
             text

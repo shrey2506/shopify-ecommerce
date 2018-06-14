@@ -6,13 +6,9 @@ import MenuItem from 'material-ui/MenuItem';
 export const RightSelectSizeUi = (props) => {
 
     const onSelectSizeClick=(event, index, value)=>{
-        console.log (event)
-        console.log (value)
-        console.log (index)
-        
 
         props.onSelectSizeClick(value);
-       
+    
 
     }
 

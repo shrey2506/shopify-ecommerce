@@ -56,7 +56,7 @@ export class ProductDetailsRightUi extends React.Component {
      
         
         
-        const selectedVariant=this.props.selectedProduct.variants.find((element)=>element.id==this.state.selectedId);
+        const selectedVariant=this.props.selectedProduct.variants.find((element)=>element.id===this.state.selectedId);
         const selectedVariantInfo = {
             id: this.state.selectedId,
             quantity: this.state.selectedQuantity,
@@ -93,7 +93,7 @@ export class ProductDetailsRightUi extends React.Component {
                 <div className="price"> <h5> NZD{selectedProduct.variants[0].price}</h5></div>
 
                 <div className="selectsize">
-                    <RightSelectSizeUi selectedProduct={selectedProduct} selectedSize={this.state.selectedSize} onSelectSizeClick={this.onSelectSizeClick} />
+                    <RightSelectSizeUi selectedProduct={selectedProduct} selectedSize={this.state.selectedId} onSelectSizeClick={this.onSelectSizeClick} />
                 </div>
 
                 <div className="selectquantity">

@@ -16,9 +16,6 @@ export const CartSingleItemUi = (props) => {
 
     const handleRemoveClick = () => {
 
-        console.log(props.product.id)
-
-
         props.handleRemoveClick({ uniqueCheckOutNumber: props.product.uniqueCheckOutNumber })
 
     }

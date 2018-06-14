@@ -1,5 +1,5 @@
 import React from 'react';
-import nopage from '../../images/noresult.jpeg';
+
 import notfound from '../../images/notfound.png'
 import './404page.css';
 import { Link } from 'react-router-dom'

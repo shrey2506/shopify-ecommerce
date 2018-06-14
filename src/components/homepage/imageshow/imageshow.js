@@ -31,7 +31,7 @@ export class ImageShow extends Component {
             let myInterval=setInterval(() => {
 
             
-            if (this.state.position == 1) {
+            if (this.state.position === 1) {
                 this.setState({
                     position: 3,
                     direction: 'left'
@@ -43,7 +43,7 @@ export class ImageShow extends Component {
                 position: this.state.position - 1,
                 direction: 'left'
 
-            })},4000
+            })},6000
         );
         this.setState({
             myInterval:myInterval
@@ -61,7 +61,7 @@ export class ImageShow extends Component {
     handleClickPlus(event) {
 
                 const cal = () => {
-                    if (this.state.position == 3) {
+                    if (this.state.position === 3) {
                         return 1;
                     }
                     return this.state.position + 1;
@@ -81,7 +81,7 @@ export class ImageShow extends Component {
 
     handleClickMinus(event) {
                 const cal = () => {
-                    if (this.state.position == 1) {
+                    if (this.state.position === 1) {
                         return 3;
                     }
                     return this.state.position - 1
@@ -101,13 +101,13 @@ export class ImageShow extends Component {
             }
 
    imageNumber (){
-                if (this.state.position==1){
+                if (this.state.position===1){
                     return 1;
                 }
-                if (this.state.position==3){
+                if (this.state.position===3){
                     return 2;
                 }
-                if (this.state.position==2){
+                if (this.state.position===2){
                     return 3;
                 }
     
@@ -124,7 +124,7 @@ export class ImageShow extends Component {
 
 
 
-                if(this.state.position == 2 && this.state.direction == "right") {
+                if(this.state.position === 2 && this.state.direction === "right") {
             styleimage1 = {
                 left: "0%",
                 transform: 'translate(100%)',
@@ -141,7 +141,7 @@ export class ImageShow extends Component {
 
         }
 
-        if (this.state.position == 3 && this.state.direction == "right") {
+        if (this.state.position === 3 && this.state.direction === "right") {
 
             styleimage1 = {
                 left: "500%",
@@ -163,7 +163,7 @@ export class ImageShow extends Component {
 
         }
 
-        if (this.state.position == 1 && this.state.direction == "right") {
+        if (this.state.position === 1 && this.state.direction === "right") {
 
             styleimage1 = {
                 left: '-100%',
@@ -185,7 +185,7 @@ export class ImageShow extends Component {
 
 
 
-        if (this.state.position == 3 && this.state.direction == "left") {
+        if (this.state.position === 3 && this.state.direction === "left") {
 
             styleimage1 = {
                 left: '0%',
@@ -203,7 +203,7 @@ export class ImageShow extends Component {
         }
 
 
-        if (this.state.position == 2 && this.state.direction == "left") {
+        if (this.state.position === 2 && this.state.direction === "left") {
 
             styleimage3 = {
                 left: '0%',
@@ -226,7 +226,7 @@ export class ImageShow extends Component {
         }
 
 
-        if (this.state.position == 1 && this.state.direction == "left") {
+        if (this.state.position === 1 && this.state.direction === "left") {
 
             styleimage1 = {
                 left: '100%',
@@ -320,9 +320,9 @@ export class ImageShow extends Component {
 
                     <div style={{display:'none'}} className="spotshow">
                     
-                        <span className={this.state.position == 3 ? 'active' : ''}>3</span>
-                        <span title='spot2' className={this.state.position == 2 ? 'active' : ''}>2</span>
-                        <span title='spot3' className={this.state.position == 1 ? 'active' : ''}>1</span>
+                        <span className={this.state.position === 3 ? 'active' : ''}>3</span>
+                        <span title='spot2' className={this.state.position === 2 ? 'active' : ''}>2</span>
+                        <span title='spot3' className={this.state.position === 1 ? 'active' : ''}>1</span>
 
                     </div>
                 </div>

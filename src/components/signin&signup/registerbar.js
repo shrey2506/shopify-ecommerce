@@ -16,7 +16,7 @@ export const RegisterBar = (props) => {
 
                     <Link to='/register' className={props.currentUrl.includes('register')?"login-register activebtn":'login-register'}
                     >Register</Link>
-                    <Link to={{pathname:'/signin', state:{from:window.location.pathname}}} onClick={()=>console.log(window.location.pathname)}className={props.currentUrl.includes('signin')?"login-signin activebtn":"login-signin"} >Sign In</Link>
+                    <Link to={{pathname:'/signin', state:{from:window.location.pathname}}} className={props.currentUrl.includes('signin')?"login-signin activebtn":"login-signin"} >Sign In</Link>
 
                 </div>
 

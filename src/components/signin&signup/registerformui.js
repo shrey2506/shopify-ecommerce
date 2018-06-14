@@ -36,7 +36,7 @@ export class RegisterFormUi extends React.Component{
         
     }
     handleRegisterByKeyBoard(event){
-        if(event.keyCode==13){
+        if(event.keyCode===13){
             this.props.handleNextClick(this.state.email, this.state.password,this.state.confirmPassword)
         }
     }

@@ -1,9 +1,9 @@
 .shopbycategory-container{
     width:100%;
+}
 
- 
-
-    
+.shopbycategory-container:hover{
+    box-shadow: 0 0 11px rgba(33,33,33,.2)
 }
 
 .shopbycategory-container .inner-container{
@@ -17,6 +17,7 @@
     justify-content: space-between;
    border-bottom: 1px solid gray;
     height:4.5rem;
+
 
 
     

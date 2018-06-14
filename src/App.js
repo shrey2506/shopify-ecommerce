@@ -2,25 +2,17 @@ import React, { Component } from 'react';
 
 import './App.css';
 
-
 import { HeaderContainer } from './containers/headercontainer/headercontainer'
 import { CategoryBarContainer } from './containers/categorybarcontainer/categorybarcontainer'
-
 import { ProductsListPage } from './components/productslistpage/finalui/productslistpage';
-
 import { RegisterFormContainer } from './containers/signup&signincontainer/registerformcontainer';
-
-
 import { PersonalCenterContainer } from './containers/signup&signincontainer/personalcentercontainer';
-
 import { LoginPageContainer } from './containers/signup&signincontainer/loginpagecontainer';
-import { Route, Switch, Link } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import { Footer } from './components/footer/footer';
 import { HomePageContainer } from './containers/homepagecontainer/homepagecontainer';
-
 import { ProductDetails } from './components/productdetailspage/final/final-ui';
 import { CartFinalUiContainer } from './containers/cartcontainer/cartfinaluicontainer';
-
 import { CheckOutFinishContainer } from './containers/checkoutfinishipagecontainer/checkoutfinishcontainer';
 import { EventsListContainer } from './containers/eventspagecontainer/eventslistcontainer';
 import {  EventsDetailsUi } from './components/eventspage/eventsdetails/eventsdetailsui';
@@ -34,13 +26,16 @@ import { firebase } from './firebase/index';
 
 
 
+
 class App extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
-      shopifyproducts:''
+      shopifyproducts:'',
+      eventsList:this.props.eventsList,
     }
+
   }
 
 
@@ -53,15 +48,15 @@ componentWillMount() {
   }
 
   this.props.fetchCheckOutProducts(restoredData);
-  
-
-  
 }
 
 componentDidMount(){
 
-
+  this.props.fetchEvents();
   this.props.fetchProducts();
+
+
+
 
   firebase.auth.onAuthStateChanged((authuser)=>{
     if(authuser){
@@ -79,10 +74,13 @@ componentDidMount(){
   })
 }
 
+
+
   render() {
     return (
 
       <div className="App">
+     
 
         <HeaderContainer />
        
@@ -97,7 +95,7 @@ componentDidMount(){
             component={HomePageContainer} />
 
             <Route path="/events/list" component={EventsListContainer}/>
-            <Route path='/events/details/:id' render={(props)=><EventsDetailsUi {...props} events={this.props.events} />}/>
+            <Route path='/events/details/:id' render={(props)=><EventsDetailsUi {...props} events={this.props.eventsList} />}/>
 
  <Route path='/products/productsdetails/:id' render={(props)=><ProductDetails {...props} productsList={this.props.productsList}   />} />
           <Route path='/products/userfiltermobile' component={ UserFilterMobileContainer } />
@@ -107,9 +105,6 @@ componentDidMount(){
           <Route path='/register' component={RegisterFormContainer} />
           <Route path='/resetpassword' component={ResetPassword} />
           <Route path='/changepassword' render={(props)=><ChangePassword {...props} login={this.props.login} />} />
-
-
-
           <Route path='/cart' component={CartFinalUiContainer}/>
           <Route path='/cartcheckoutfinished' component={CheckOutFinishContainer} /> 
           <Route path='/term-of-use' component={TermOfUse} />

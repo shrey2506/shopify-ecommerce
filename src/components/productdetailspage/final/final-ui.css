@@ -3,6 +3,7 @@
     background: rgb(238, 237, 237);
     margin:-1.5rem;
     padding:1rem;
+
 }
 
 
@@ -28,7 +29,8 @@
         background: rgb(238, 237, 237);
         margin:0 -1.5rem;
         margin-top:0;
-        padding:1rem 1rem;
+        padding:0rem 1rem;
+       
     }
     
 }

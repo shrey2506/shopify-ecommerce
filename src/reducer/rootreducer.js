@@ -21,6 +21,7 @@ const initialState = {
     checkOutProducts:[],
     openCheckOut:false,
     searchTerm:'',
+    eventsList:'2',
     events:[
         {
             title: 'Rain BBQ at Waiheke Vineyard!',
@@ -111,6 +112,9 @@ return Object.assign({},state,{checkOutProducts:[...state.checkOutProducts,actio
 
         case "CLEAR_CART":
         return Object.assign({},state,{checkOutProducts:''})
+
+        case 'ADD_EVENTS':
+        return Object.assign({},state,{eventsList:action.text})
 
         case "OPEN_CHECKOUT":
         return Object.assign({},state,{openCheckOut:true})

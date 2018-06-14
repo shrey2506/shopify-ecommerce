@@ -6,7 +6,9 @@ const mapStateToProps = (state) =>{
         businesses: state.businesses,
         productsList: state.productsList,
         collectionList: state.collectionList,
-        events:state.events
+        eventsList:state.eventsList,
+        ...state,
+       
     }
 }
 

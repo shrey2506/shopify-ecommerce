@@ -55,10 +55,9 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-column-gap: 2rem;
-        margin-top:0;
-        padding: 5rem;
+        margin-top:2rem;
+        padding: 5rem 8rem;
         padding-top: 1rem;
-        
         
     }
 

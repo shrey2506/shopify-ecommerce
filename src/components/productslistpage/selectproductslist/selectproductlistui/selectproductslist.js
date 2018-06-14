@@ -23,7 +23,7 @@ export class SelectProductsList extends React.Component{
         this.props.changeFilterShipping(nextProps.filterShipping);
         this.props.changeSearchTerm(nextProps.searchTerm);
         window.scrollTo(0,0)
-        console.log(this.render.afterCategoryList)
+       
     }
 
     componentDidMount() {
@@ -32,7 +32,7 @@ export class SelectProductsList extends React.Component{
         this.props.changeFilterShipping(this.props.filterShipping);
         this.props.changeSearchTerm(this.props.searchTerm);
         window.scrollTo(0,0)
-        console.log(this.render.afterCategoryList)
+     
     }
 
     componentWillUnmount(){
@@ -43,10 +43,6 @@ export class SelectProductsList extends React.Component{
 
    
   
-
-    
-
-    
 
     render (){
 
@@ -89,22 +85,22 @@ export class SelectProductsList extends React.Component{
            
             
         }
-        if (props.filterShipping==1){
+        if (props.filterShipping==='1'){
            
            
-            return afterFilterPriceList().filter(element=>element.shipping==1)
+            return afterFilterPriceList().filter(element=>element.shipping==='1')
 
         }
-        if (props.filterShipping==2){
+        if (props.filterShipping==='2'){
           
           
-            return afterFilterPriceList().filter(element=>element.shipping==2)
+            return afterFilterPriceList().filter(element=>element.shipping==='2')
             
         }
-        if (props.filterShipping==3){
+        if (props.filterShipping==='3'){
             
           
-            return afterFilterPriceList().filter(element=>element.shipping==3)
+            return afterFilterPriceList().filter(element=>element.shipping==='3')
             
         }
     }
@@ -136,24 +132,24 @@ export class SelectProductsList extends React.Component{
         if (props.currentCategory==="All"){
             return afterSearchList();
         }
-        return afterSearchList().filter((element)=>element.category==props.currentCategory)
+        return afterSearchList().filter((element)=>element.category===props.currentCategory)
        
 
     }
 
     const afterSortList = () =>{
         
-        if (props.sortValue==1){
+        if (props.sortValue==='1'){
             return afterCategoryList()
            
         }
       
-        if (props.sortValue==3){
+        if (props.sortValue==='3'){
              return afterCategoryList().map(a=>a).sort((a,b) =>b.variants[0].price-a.variants[0].price)
         }
 
         
-        if (props.sortValue==4){
+        if (props.sortValue==='4'){
              return afterCategoryList().map(a=>a).sort((a,b) =>a.variants[0].price-b.variants[0].price)
         }
     }
@@ -165,7 +161,7 @@ if (!props.productsList[0]) {
 
 
 
-if (afterSortList().length==0||afterSortList()==null) {
+if (afterSortList().length===0||afterSortList()===null) {
     
     return <NoResultPage />
 }

@@ -4,7 +4,7 @@ import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import history from '../../components/productslistpage/userfilter/history';
 import { auth } from '../../firebase/index';
-import { Link } from 'react-router-dom'
+
 
 
 export class ResetPassword extends React.Component{
@@ -41,9 +41,8 @@ export class ResetPassword extends React.Component{
      error:''
  })
         const val=this.state.email;
-        
-        console.log(val)
-        if (val == "") {
+
+        if (val === "") {
 
             this.setState({
                 error:'required.'
@@ -62,7 +61,7 @@ export class ResetPassword extends React.Component{
         auth.doPasswordReset(val)
       .then((result) => {
 
-        if (result==undefined){
+        if (result===undefined){
             this.setState({
                 message:'A email has been sent to your email address for setting your password.'
             })

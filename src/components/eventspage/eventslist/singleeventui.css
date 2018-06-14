@@ -1,10 +1,17 @@
-
-
+.singleeventui-container {
+    padding:1rem;
+    transition:.3s;
+    background:white;
+    border-radius: 3px;
+    
+    height:100%;
+}
 
 .singleeventui-container .image {
    
     
     text-align: center;
+    height:10rem;
 
 }
 
@@ -19,7 +26,8 @@
 .singleeventui-container .brief {
     font-weight: 100;
     color:black;
-    text-align: justify
+    text-align: justify;
+
 }
 
 .singleeventui-container .title {
@@ -29,6 +37,12 @@
     color: black
     
 }
+
+.singleeventui-container:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+    transition:.3s;
+}
+
 
 @media only screen and (min-width:700px) {
     .singleeventui-container .title{

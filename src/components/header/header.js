@@ -125,7 +125,7 @@ export class HeaderSearch extends React.Component {
                         <div className='hearder-cart'>
 
                         <Link to='/cart' className="cart"><i className="fa fa-cart-arrow-down"></i></Link>
-                        <div className={this.props.checkOutProducts.length==0?'displaynone':'itemsincart'}>{this.props.checkOutProducts.length}</div>
+                        <div className={this.props.checkOutProducts.length===0?'displaynone':'itemsincart'}>{this.props.checkOutProducts.length}</div>
                         </div>
 
                     </div>
@@ -152,7 +152,7 @@ export class HeaderSearch extends React.Component {
                         </div>
                         <div className="header-right, hearder-cart">
                             <Link to='/cart' className="cart"><i className="fa fa-cart-arrow-down"></i></Link>
-                            <div className={this.props.checkOutProducts.length==0?'displaynone':'itemsincart'}>{this.props.checkOutProducts.length}</div>
+                            <div className={this.props.checkOutProducts.length===0?'displaynone':'itemsincart'}>{this.props.checkOutProducts.length}</div>
                         </div>
                     </div>
 

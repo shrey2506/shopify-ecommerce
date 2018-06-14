@@ -16,7 +16,7 @@ export class ProductLeftImage extends React.Component {
     handlePrevClick() {
 
         let x = this.state.currentImage;
-        if (x == 1) {
+        if (x === 1) {
      
             x = this.props.selectedProduct.imageSrcArray.length+1;
         }
@@ -29,7 +29,7 @@ export class ProductLeftImage extends React.Component {
 
     handleNextClick() {
         let x = this.state.currentImage;
-        if (x == this.props.selectedProduct.imageSrcArray.length) {
+        if (x === this.props.selectedProduct.imageSrcArray.length) {
             
             x = 0;
         }
@@ -41,9 +41,9 @@ export class ProductLeftImage extends React.Component {
     }
 
     onSmallImageClick(event){
-        console.log(event.target)
+
         this.setState({
-            currentImage:event.target.title
+            currentImage:parseInt(event.target.title, 10)
         })
     }
 
@@ -74,7 +74,7 @@ export class ProductLeftImage extends React.Component {
                     {selectedProduct.imageSrcArray.map((element) => {
                         listNumberA++;
                         return <img
-                            style={this.state.currentImage == listNumberA ? stylemainimage : {}}
+                            style={this.state.currentImage === listNumberA ? stylemainimage : {}}
                             key={element.src}
                             className="img fade"
                             src={element.src}
@@ -99,7 +99,7 @@ export class ProductLeftImage extends React.Component {
                                 src={element.src}
                                 title={listNumberB}
                                 onClick={this.onSmallImageClick}
-                                style={this.state.currentImage == listNumberB ? style : {}}
+                                style={this.state.currentImage === listNumberB ? style : {}}
                                
                             /></div>
 

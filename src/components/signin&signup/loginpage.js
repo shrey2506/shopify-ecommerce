@@ -41,7 +41,7 @@ export class LoginPage extends React.Component {
         const email = this.state.loginEmail.value;
         const password = this.state.loginPassword.value;
 
-        if (this.state.loginEmail.status == false || this.state.loginPassword.status == false) {
+        if (this.state.loginEmail.status === false || this.state.loginPassword.status === false) {
 
             this.setState({
                 updateRequest:false,
@@ -113,7 +113,7 @@ export class LoginPage extends React.Component {
         //const val = document.getElementById("loginEmail").value;
        const val=this.state.loginEmail.value;
 
-        if (val == "") {
+        if (val === "") {
 
             this.setState({
                 loginEmail: { status: false, errorText: "required" }
@@ -141,7 +141,7 @@ export class LoginPage extends React.Component {
         //const val = document.getElementById("loginPassword").value;
         const val=this.state.loginPassword.value;
 
-        if (val == "") {
+        if (val === "") {
 
             this.setState({
                 loginPassword: { status: false, errorText: "required" }
@@ -186,7 +186,7 @@ export class LoginPage extends React.Component {
 
     handleLoginSubmitByKeyBoard(event){
        
-        if (event.keyCode==13){
+        if (event.keyCode===13){
             this.handleLoginSubmit()
         }
         return;
@@ -194,8 +194,7 @@ export class LoginPage extends React.Component {
 
     handleLoginSubmit() {
 
-        const email = this.state.loginEmail.value;
-        const password = this.state.loginPassword.value;
+ 
 
         this.handleEmailBlur();
         this.handlePasswordBlur();
